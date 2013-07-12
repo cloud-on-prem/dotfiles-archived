@@ -121,7 +121,6 @@ git_dirty_flag() {
 # Custom bash prompt via kirsle.net/wizards/ps1.html
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\]★ \w\$(parse_git_branch)\$(git_dirty_flag) ⇢ \[$(tput sgr0)\]"
 
-cd ~/flippa/flippa-rails/
 alias c='clear'
 alias x='exit'
 alias rc='bx pry -r ./config/environment'
@@ -135,3 +134,5 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 EDITOR=vi
 export EDITOR
+
+set -o vi
