@@ -135,4 +135,4 @@ export PATH="/usr/local/heroku/bin:$PATH"
 EDITOR=vi
 export EDITOR
 
-set -o vi
+set -o emacs
