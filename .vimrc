@@ -31,6 +31,6 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'flazz/vim-colorschemes'
 
-colorscheme solarized      " set colorscheme
+colorscheme molokai " set colorscheme
