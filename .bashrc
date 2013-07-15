@@ -10,6 +10,9 @@ export TERM=xterm-256color
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
+# Add RSA or DSA identities to the authentication agent
+ssh-add -l >/dev/null
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 
