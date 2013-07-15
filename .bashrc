@@ -139,3 +139,5 @@ EDITOR=vi
 export EDITOR
 
 set -o emacs
+
+git config --global color.ui true
