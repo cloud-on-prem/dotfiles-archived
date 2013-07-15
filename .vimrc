@@ -1,4 +1,5 @@
 set nocompatible           " get rid of Vi compatibility mode. SET FIRST!
+set encoding=utf-8
 filetype plugin indent on  " filetype detection[ON] plugin[ON] indent[ON]
 set t_Co=256               " enable 256-color mode.
 syntax enable              " enable syntax highlighting (previously syntax on).
@@ -32,5 +33,6 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'scrooloose/nerdtree'
 
 colorscheme molokai " set colorscheme
