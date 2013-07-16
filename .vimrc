@@ -34,5 +34,12 @@ Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'scrooloose/nerdtree'
+Bundle 'vim-scripts/tComment'
+Bundle 'msanders/snipmate.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'Lokaltog/vim-easymotion'
 
 colorscheme molokai " set colorscheme
+
+" Open Nerdtree
+map <C-n> :NERDTreeToggle<CR>
