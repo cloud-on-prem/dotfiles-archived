@@ -141,3 +141,6 @@ export EDITOR
 set -o emacs
 
 git config --global color.ui true
+
+export LC_ALL="en_AU.UTF-8"
+export LC_CTYPE="en_AU.UTF-8"

@@ -21,6 +21,8 @@ set smarttab               " use tabs at the start of a line, spaces elsewhere
 set nowrap                 " don't wrap text
 set nu
 set ttimeoutlen=10         "wait for 10ms after escape
+set hidden                 "Hide the buffers
+
 syntax on
 filetype plugin indent on
 
@@ -29,6 +31,8 @@ call vundle#rc()
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
+noremap <C-H> :MBEbn<CR>
+noremap <C-L> :MBEbp<CR>
 
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
@@ -38,8 +42,15 @@ Bundle 'vim-scripts/tComment'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'fholgado/minibufexpl.vim'
+Bundle 'bronson/vim-trailing-whitespace'
 
 colorscheme molokai " set colorscheme
 
 " Open Nerdtree
 map <C-n> :NERDTreeToggle<CR>
+
+let NERDTreeShowHidden=1
+let g:miniBufExplAutoStart = 1
+let g:miniBufExplCycleArround = 0
