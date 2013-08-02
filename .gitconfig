@@ -1,0 +1,18 @@
+[user]
+	name = Prem Pillai
+	email = prem.pillai@gmail.com
+[color]
+	ui = true
+[alias]
+    st = status
+    sb = status -s -b
+    #############
+    d = diff
+    dc = diff --cached
+    dk = diff --check
+    dck = diff --cached --check
+    #############
+    ls = log --oneline
+    lg = log --oneline --graph --decorate
+    #############
+    human = name-rev --name-only --refs=refs/heads/*
