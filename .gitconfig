@@ -16,3 +16,4 @@
     lg = log --oneline --graph --decorate
     #############
     human = name-rev --name-only --refs=refs/heads/*
+    co = checkout
