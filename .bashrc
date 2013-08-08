@@ -125,12 +125,10 @@ git_dirty_flag() {
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\]★ \w\$(parse_git_branch)\$(git_dirty_flag) ⇢ \[$(tput sgr0)\]"
 
 alias c='clear'
-alias x='exit'
-alias rc='bx pry -r ./config/environment'
-alias gg='cd ~/gilean/'
-alias fr='cd ~/flippa/flippa-rails'
-alias dash='cd ~/portfolio/'
+alias ex='exit'
 alias fs='foreman start'
+alias vu='vagrant up'
+alias vh='vagrant halt'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
