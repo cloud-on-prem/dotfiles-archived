@@ -31,8 +31,8 @@ call vundle#rc()
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
-noremap <C-H> :MBEbn<CR>
-noremap <C-L> :MBEbp<CR>
+noremap <C-H> :MBEbp<CR>
+noremap <C-L> :MBEbn<CR>
 
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
