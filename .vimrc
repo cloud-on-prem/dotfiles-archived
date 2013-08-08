@@ -46,8 +46,9 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'ervandew/supertab'
 Bundle 'mileszs/ack.vim'
+Bundle 'tpope/vim-rails'
 
-colorscheme molokai " set colorscheme
+colorscheme solarized " set colorscheme
 
 " Open Nerdtree
 map <C-n> :NERDTreeToggle<CR>
