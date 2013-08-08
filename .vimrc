@@ -45,6 +45,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'ervandew/supertab'
+Bundle 'mileszs/ack.vim'
 
 colorscheme molokai " set colorscheme
 
