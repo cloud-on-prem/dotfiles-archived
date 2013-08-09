@@ -22,6 +22,7 @@ set nowrap                 " don't wrap text
 set nu
 set ttimeoutlen=10         "wait for 10ms after escape
 set hidden                 "Hide the buffers
+set tags=./tags            "Where to find ctags
 
 syntax on
 filetype plugin indent on
