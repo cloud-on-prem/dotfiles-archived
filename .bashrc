@@ -124,11 +124,6 @@ git_dirty_flag() {
 # Custom bash prompt via kirsle.net/wizards/ps1.html
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\]★ \w\$(parse_git_branch)\$(git_dirty_flag) ⇢ \[$(tput sgr0)\]"
 
-alias c='clear'
-alias fs='foreman start'
-alias vu='ssh-add && vagrant up'
-alias vh='vagrant halt'
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 

@@ -48,6 +48,9 @@ Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'ervandew/supertab'
 Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-rails'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
 
 colorscheme solarized " set colorscheme
 
