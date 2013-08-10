@@ -126,7 +126,7 @@ export PS1="\[$(tput bold)\]\[$(tput setaf 2)\]★ \w\$(parse_git_branch)\$(git_
 
 alias c='clear'
 alias fs='foreman start'
-alias vu='vagrant up'
+alias vu='ssh-add && vagrant up'
 alias vh='vagrant halt'
 
 ### Added by the Heroku Toolbelt
