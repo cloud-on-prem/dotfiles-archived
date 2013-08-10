@@ -132,9 +132,5 @@ export EDITOR
 
 set -o emacs
 
-git config --global color.ui true
-git config --global user.name "☆ Prem Pillai (@premjg)"
-git config --global user.email prem.pillai@gmail.com
-
 export LC_ALL="en_AU.UTF-8"
 export LC_CTYPE="en_AU.UTF-8"
