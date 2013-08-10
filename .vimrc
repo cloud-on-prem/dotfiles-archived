@@ -54,6 +54,10 @@ colorscheme solarized " set colorscheme
 " Open Nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
+" Focus MiniBuffer
+map <M-b> :MBEFocus<CR>
+map ∫ :MBEFocus<CR> " For Mac
+
 let NERDTreeShowHidden=1
 let g:miniBufExplAutoStart = 1
 let g:miniBufExplCycleArround = 0
