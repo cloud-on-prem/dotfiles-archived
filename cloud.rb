@@ -1,3 +1,9 @@
+begin
+  require "thor"
+rescue LoadError
+  system("gem install thor")
+end
+
 require "thor"
 
 class Cloud < Thor
@@ -16,7 +22,7 @@ class Cloud < Thor
       File.symlink(new_file_ref, old_file_ref)
       puts "Symlinked #{old_file_ref}"
     end
-    source_bash_files = `source ~/.bashrc`
+    system("source ~/.bashrc")
     puts "Sourced .bashrc"
     puts "All Done!"
   end
