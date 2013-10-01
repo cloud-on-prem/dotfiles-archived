@@ -43,7 +43,6 @@ Bundle 'vim-scripts/tComment'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'fholgado/minibufexpl.vim'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'ervandew/supertab'
 Bundle 'mileszs/ack.vim'
@@ -51,16 +50,16 @@ Bundle 'tpope/vim-rails'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
+Bundle 'othree/html5.vim'
 
-colorscheme solarized " set colorscheme
+colorscheme molokai " set colorscheme
 
 " Open Nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
-" Focus MiniBuffer
-map <M-b> :MBEFocus<CR>
-map ∫ :MBEFocus<CR> " For Mac
+" Tabs
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
+map  <C-t> :tabnew<CR>
 
 let NERDTreeShowHidden=1
-let g:miniBufExplAutoStart = 1
-let g:miniBufExplCycleArround = 0
