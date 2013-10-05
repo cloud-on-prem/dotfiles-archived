@@ -48,11 +48,13 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'othree/html5.vim'
 Bundle 'wavded/vim-stylus'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'mattn/emmet-vim'
 
 colorscheme molokai " set colorscheme
 
 " Open Nerdtree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.swp$']
 
 " Tabs
 map  <C-l> :tabn<CR>
