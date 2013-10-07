@@ -17,3 +17,5 @@
     #############
     human = name-rev --name-only --refs=refs/heads/*
     co = checkout
+[core]
+	filemode = false

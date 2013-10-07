@@ -52,7 +52,7 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 
-colorscheme solarized " set colorscheme
+colorscheme molokai " set colorscheme
 
 " Open Nerdtree
 map <C-n> :NERDTreeToggle<CR>
