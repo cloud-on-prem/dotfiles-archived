@@ -75,3 +75,7 @@ filetype plugin indent on
 if has('gui_running')
   set guifont=Inconsolata:h18
 endif
+
+"Don't pollute filesystem with .swp and other temp files
+set backupdir=$TEMP//
+set directory=$TEMP//
