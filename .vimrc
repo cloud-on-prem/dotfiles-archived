@@ -71,3 +71,7 @@ hi link coffeeSpaceError NONE
 syntax on
 filetype off
 filetype plugin indent on
+
+if has('gui_running')
+  set guifont=Inconsolata:h18
+endif
