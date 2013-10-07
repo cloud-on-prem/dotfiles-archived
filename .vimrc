@@ -1,12 +1,10 @@
 set nocompatible           " get rid of Vi compatibility mode. SET FIRST!
 set encoding=utf-8
-filetype plugin indent on  " filetype detection[ON] plugin[ON] indent[ON]
 set t_Co=256               " enable 256-color mode.
 syntax enable              " enable syntax highlighting (previously syntax on).
 set background=dark
 set number                 " show line numbers
 set laststatus=2           " last window always has a statusline
-filetype indent on         " activates indenting for files
 set nohlsearch             " Don't continue to highlight searched phrases.
 set incsearch              " But do highlight as you type your search.
 set ignorecase             " Make searches case-insensitive.
@@ -24,9 +22,6 @@ set ttimeoutlen=10         "wait for 10ms after escape
 set hidden                 "Hide the buffers
 set tags=./tags            "Where to find ctags
 
-syntax on
-filetype plugin indent on
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -43,7 +38,6 @@ Bundle 'vim-scripts/tComment'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'fholgado/minibufexpl.vim'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'ervandew/supertab'
 Bundle 'mileszs/ack.vim'
@@ -51,16 +45,37 @@ Bundle 'tpope/vim-rails'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
+Bundle 'othree/html5.vim'
+Bundle 'wavded/vim-stylus'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'mattn/emmet-vim'
 
 colorscheme molokai " set colorscheme
 
 " Open Nerdtree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.swp$']
 
-" Focus MiniBuffer
-map <M-b> :MBEFocus<CR>
-map ∫ :MBEFocus<CR> " For Mac
+" Tabs
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
+map  <C-t> :tabnew<CR>
 
 let NERDTreeShowHidden=1
-let g:miniBufExplAutoStart = 1
-let g:miniBufExplCycleArround = 0
+
+" Coffeescript Support
+hi link coffeeReservedError NONE
+hi link coffeeSemicolonError NONE
+hi link coffeeSpaceError NONE
+
+syntax on
+filetype off
+filetype plugin indent on
+
+if has('gui_running')
+  set guifont=Inconsolata:h18
+endif
+
+"Don't pollute filesystem with .swp and other temp files
+set backupdir=$TEMP//
+set directory=$TEMP//
