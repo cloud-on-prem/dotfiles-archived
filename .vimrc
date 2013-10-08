@@ -30,6 +30,9 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 noremap <C-H> :MBEbp<CR>
 noremap <C-L> :MBEbn<CR>
 
+"Enable Matchit
+runtime macros/matchit.vim
+
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'flazz/vim-colorschemes'
@@ -49,12 +52,23 @@ Bundle 'othree/html5.vim'
 Bundle 'wavded/vim-stylus'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mattn/emmet-vim'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'tpope/vim-fugitive'
 
 colorscheme molokai " set colorscheme
 
 " Open Nerdtree
 map <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore = ['\.swp$']
+let NERDTreeIgnore = ['\.swp$','.DS_Store']
+
+" Fix multiple cursors key mapping
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-f>'
+let g:multi_cursor_prev_key='<C-d>'
+let g:multi_cursor_skip_key='<C-g>'
+let g:multi_cursor_quit_key='<Esc>'
 
 " Tabs
 map  <C-l> :tabn<CR>
@@ -76,6 +90,12 @@ if has('gui_running')
   set guifont=Inconsolata:h18
 endif
 
-"Don't pollute filesystem with .swp and other temp files
-set backupdir=$TEMP//
-set directory=$TEMP//
+" No swp files
+set noswapfile
+
+" force blank lines at end of file
+set eol
+
+" Set the status line powered by fugitive
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
