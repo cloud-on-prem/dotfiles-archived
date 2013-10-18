@@ -99,3 +99,13 @@ set eol
 " Set the status line powered by fugitive
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
+" Set up syntaxes
+au BufRead,BufNewFile *.rabl setf ruby
+
+
+" Mouse for scrolling etc in console.
+set mouse=a
+"
+" " Resize split panes with mouse within tmux.
+" " Also get live-updated text selection with mouse drag.
+set ttymouse=xterm2
