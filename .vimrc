@@ -61,7 +61,7 @@ colorscheme molokai " set colorscheme
 
 " Open Nerdtree
 map <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore = ['\.swp$','.DS_Store']
+let NERDTreeIgnore = ['\.swp$','.DS_Store', '.git[[dir]]']
 
 " Fix multiple cursors key mapping
 let g:multi_cursor_use_default_mapping=0
