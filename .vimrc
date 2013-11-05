@@ -27,8 +27,6 @@ call vundle#rc()
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
-noremap <C-H> :MBEbp<CR>
-noremap <C-L> :MBEbn<CR>
 
 "Enable Matchit
 runtime macros/matchit.vim
@@ -71,9 +69,9 @@ let g:multi_cursor_skip_key='<C-g>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " Tabs
-map  <C-l> :tabn<CR>
-map  <C-h> :tabp<CR>
-map  <C-t> :tabnew<CR>
+map <C-t> :tabnew<CR>
+map <C-S-Right> gt
+map <C-S-Left> gT
 
 let NERDTreeShowHidden=1
 
