@@ -8,11 +8,8 @@
 
 2.  Create Symlinks:
 
-    `$ cd .dotfiles  
-    `$ ruby ./cloud make_it_rain  
+    `$ cd .dotfiles`  
+    `$ ruby ./cloud.rb make_it_rain`
 
 3. Install configured bundles:  
-    Launch `vim`, run `:BundleInstall`  
-                                    
-                                    
-
+    Launch `vim`, run `:BundleInstall`
