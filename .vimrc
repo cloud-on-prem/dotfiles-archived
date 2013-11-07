@@ -38,7 +38,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/tComment'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
-Bundle 'Lokaltog/vim-powerline'
+" Bundle 'Lokaltog/vim-powerline'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'ervandew/supertab'
 Bundle 'mileszs/ack.vim'
@@ -54,8 +54,26 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'tpope/vim-fugitive'
+Bundle 'bling/vim-airline'
 
-colorscheme molokai " set colorscheme
+" Look and Feel
+set background=dark
+colorscheme molokai
+let g:airline_theme='luna'
+let g:airline_powerline_fonts=1
+set cursorline " Highlight the current line
+set cuc cul " Highlight active column
+set number
+set ruler
+set eol " force blank lines at end of file
+syntax on
+filetype off
+filetype plugin indent on
+
+if has('gui_running')
+  set guifont=Inconsolata:h18
+endif
+" -------------------------------------
 
 " Open Nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -80,19 +98,9 @@ hi link coffeeReservedError NONE
 hi link coffeeSemicolonError NONE
 hi link coffeeSpaceError NONE
 
-syntax on
-filetype off
-filetype plugin indent on
-
-if has('gui_running')
-  set guifont=Inconsolata:h18
-endif
-
 " No swp files
 set noswapfile
 
-" force blank lines at end of file
-set eol
 
 " Set the status line powered by fugitive
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
