@@ -1,9 +1,4 @@
 set nocompatible           " get rid of Vi compatibility mode. SET FIRST!
-set encoding=utf-8
-set t_Co=256               " enable 256-color mode.
-syntax enable              " enable syntax highlighting (previously syntax on).
-set background=dark
-set number                 " show line numbers
 set laststatus=2           " last window always has a statusline
 set nohlsearch             " Don't continue to highlight searched phrases.
 set incsearch              " But do highlight as you type your search.
@@ -38,7 +33,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/tComment'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
-" Bundle 'Lokaltog/vim-powerline'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'ervandew/supertab'
 Bundle 'mileszs/ack.vim'
@@ -63,8 +57,6 @@ Bundle 'scrooloose/syntastic'
 " Look and Feel
 set background=dark
 colorscheme molokai
-let g:airline_theme='luna'
-let g:airline_powerline_fonts=1
 set cursorline " Highlight the current line
 set cuc cul " Highlight active column
 set number
@@ -73,7 +65,33 @@ set eol " force blank lines at end of file
 syntax on
 filetype off
 filetype plugin indent on
+set scrolloff=3
+set encoding=utf-8
+set fileencodings=utf-8
+set t_Co=256               " enable 256-color mode.
+syntax enable              " enable syntax highlighting (previously syntax on).
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_powerline_fonts=1
+let g:airline_detect_paste=1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='luna'
+let g:airline_powerline_fonts=1
+let g:airline_left_alt_sep = '▶'
+let g:airline_left_sep = '▶'
+let g:airline_right_alt_sep = '◀'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
 
 if has('gui_running')
   set guifont=Inconsolata:h18
