@@ -42,6 +42,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'ervandew/supertab'
 Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-rails'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
@@ -55,6 +56,9 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
+Bundle 'Lokaltog/powerline-fonts'
+Bundle 'mhinz/vim-signify'
+Bundle 'scrooloose/syntastic'
 
 " Look and Feel
 set background=dark
@@ -69,11 +73,13 @@ set eol " force blank lines at end of file
 syntax on
 filetype off
 filetype plugin indent on
+let g:airline#extensions#tabline#enabled = 1
 
 if has('gui_running')
   set guifont=Inconsolata:h18
 endif
 " -------------------------------------
+
 
 " Open Nerdtree
 map <C-n> :NERDTreeToggle<CR>
