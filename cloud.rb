@@ -2,9 +2,9 @@ begin
   require "thor"
 rescue LoadError
   system("gem install thor")
+  require "thor"
 end
 
-require "thor"
 
 class Cloud < Thor
 
@@ -17,14 +17,14 @@ class Cloud < Thor
       new_file_ref = File.expand_path("~/.dotfiles/#{file}")
       if File.exists?(old_file_ref)
         File.delete(old_file_ref)
-        puts "Deleted #{old_file_ref}"
+        puts "✂ Deleted #{old_file_ref}"
       end
       File.symlink(new_file_ref, old_file_ref)
-      puts "Symlinked #{old_file_ref}"
+      puts "⚑ Symlinked #{old_file_ref}"
     end
     system("source ~/.bashrc")
-    puts "Sourced .bashrc"
-    puts "All Done!"
+    puts "✎ Sourced .bashrc"
+    puts "☀ All Done!"
   end
 end
 

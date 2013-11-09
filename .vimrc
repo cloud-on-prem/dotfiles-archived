@@ -20,8 +20,9 @@ set tags=./tags            "Where to find ctags
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" <Ctrl-l> redraws the screen and removes any search highlighting.
+let mapleader = ";"
 nnoremap <silent> <C-l> :nohl<CR><C-l>
+" <Ctrl-l> redraws the screen and removes any search highlighting.
 
 "Enable Matchit
 runtime macros/matchit.vim
@@ -140,5 +141,10 @@ set mouse=a
 " " Also get live-updated text selection with mouse drag.
 set ttymouse=xterm2
 
+
 " Open Vimrc on a whim
 map <Leader>v :e $MYVIMRC<CR>
+" set the leader key to ';' (easy to type)
+
+" Paste stuff like a boss
+map <Leader>p :set paste!<CR>
