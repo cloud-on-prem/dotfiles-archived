@@ -58,7 +58,7 @@ Bundle 'scrooloose/syntastic'
 set background=dark
 colorscheme molokai
 set cursorline " Highlight the current line
-set cuc cul " Highlight active column
+" set cuc cul " Highlight active column
 set number
 set ruler
 set eol " force blank lines at end of file
