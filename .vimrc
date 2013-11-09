@@ -139,3 +139,6 @@ set mouse=a
 " " Resize split panes with mouse within tmux.
 " " Also get live-updated text selection with mouse drag.
 set ttymouse=xterm2
+
+" Open Vimrc on a whim
+map <Leader>v :e $MYVIMRC<CR>
