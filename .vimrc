@@ -20,7 +20,7 @@ set tags=./tags            "Where to find ctags
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-let mapleader = ";"
+let mapleader = ";" "set the leader key to ';' (easy to type)
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 
@@ -141,10 +141,7 @@ set mouse=a
 " " Also get live-updated text selection with mouse drag.
 set ttymouse=xterm2
 
-
-" Open Vimrc on a whim
-map <Leader>v :e $MYVIMRC<CR>
-" set the leader key to ';' (easy to type)
-
-" Paste stuff like a boss
-map <Leader>p :set paste!<CR>
+map <Leader>V :e $MYVIMRC<CR> " Open Vimrc on a whim
+map <Leader>p :set paste!<CR> " Paste stuff like a boss
+map <Leader>v :vsp<CR> " Open a split window
+map <Leader>w <C-w>w " Cycle between windows
