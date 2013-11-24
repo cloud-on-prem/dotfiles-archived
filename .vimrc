@@ -54,6 +54,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'tpope/vim-fugitive'
+Bundle 'wookiehangover/jshint.vim'
 
 colorscheme molokai " set colorscheme
 
