@@ -19,3 +19,4 @@
     co = checkout
 [core]
 	filemode = false
+	editor = /usr/bin/vim
