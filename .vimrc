@@ -102,7 +102,7 @@ endif
 
 " Open Nerdtree
 map <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore = ['\.swp$','.DS_Store', '.git[[dir]]']
+let NERDTreeIgnore = ['\.swp$','.DS_Store', '.git[[dir]]', '.sass-cache[[dir]]']
 
 " Fix multiple cursors key mapping
 let g:multi_cursor_use_default_mapping=0
@@ -145,3 +145,4 @@ map <Leader>V :e $MYVIMRC<CR> " Open Vimrc on a whim
 map <Leader>p :set paste!<CR> " Paste stuff like a boss
 map <Leader>v :vsp<CR> " Open a split window
 map <Leader>w <C-w>w " Cycle between windows
+map <Leader>f :NERDTreeFind<CR> " Show the current file in Nerdtree
