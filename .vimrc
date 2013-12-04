@@ -49,10 +49,10 @@ Bundle 'mattn/emmet-vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'tpope/vim-fugitive'
 Bundle 'wookiehangover/jshint.vim'
-Bundle 'bling/vim-airline'
-Bundle 'Lokaltog/powerline-fonts'
+" Bundle 'bling/vim-airline'
+" Bundle 'Lokaltog/powerline-fonts'
+" Bundle 'tpope/vim-fugitive'
 Bundle 'mhinz/vim-signify'
 Bundle 'scrooloose/syntastic'
 
@@ -60,7 +60,7 @@ Bundle 'scrooloose/syntastic'
 set background=dark
 colorscheme molokai
 set cursorline " Highlight the current line
-" set cuc cul " Highlight active column
+set cuc cul " Highlight active column
 set number
 set ruler
 set eol " force blank lines at end of file
@@ -73,27 +73,27 @@ set fileencodings=utf-8
 set t_Co=256               " enable 256-color mode.
 syntax enable              " enable syntax highlighting (previously syntax on).
 
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
+" if !exists('g:airline_symbols')
+"   let g:airline_symbols = {}
+" endif
 
-let g:airline_powerline_fonts=1
-let g:airline_detect_paste=1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='luna'
-let g:airline_powerline_fonts=1
-let g:airline_left_alt_sep = '▶'
-let g:airline_left_sep = '▶'
-let g:airline_right_alt_sep = '◀'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
+" let g:airline_powerline_fonts=1
+" let g:airline_detect_paste=1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_theme='luna'
+" let g:airline_powerline_fonts=1
+" let g:airline_left_alt_sep = '▶'
+" let g:airline_left_sep = '▶'
+" let g:airline_right_alt_sep = '◀'
+" let g:airline_right_sep = '◀'
+" let g:airline_symbols.linenr = '␊'
+" let g:airline_symbols.linenr = '␤'
+" let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.branch = '⎇'
+" let g:airline_symbols.paste = 'ρ'
+" let g:airline_symbols.paste = 'Þ'
+" let g:airline_symbols.paste = '∥'
+" let g:airline_symbols.whitespace = 'Ξ'
 
 if has('gui_running')
   set guifont=Inconsolata:h18
@@ -128,7 +128,7 @@ set noswapfile
 
 
 " Set the status line powered by fugitive
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+" set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Set up syntaxes
 au BufRead,BufNewFile *.rabl setf ruby
