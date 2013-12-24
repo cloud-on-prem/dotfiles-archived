@@ -135,5 +135,3 @@ set -o emacs
 export LC_ALL="en_AU.UTF-8"
 export LC_CTYPE="en_AU.UTF-8"
 
-# Ensure SSH auth is available in Tmux;
-ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
