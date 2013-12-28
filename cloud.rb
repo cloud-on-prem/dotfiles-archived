@@ -21,6 +21,10 @@ class Cloud < Thor
       File.symlink(new_file_ref, old_file_ref)
       puts "⚑ Symlinked #{old_file_ref}"
     end
+
+    # Put Tmux SSH RC into the correct place;
+    system("cat ~/.dotfiles/.ssh.tmux.rc > ~/.ssh/rc")
+
     system("source ~/.bashrc")
     puts "✎ Sourced .bashrc"
     puts "☀ All Done!"
