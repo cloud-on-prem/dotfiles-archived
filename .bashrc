@@ -134,3 +134,7 @@ set -o emacs
 
 export LC_ALL="en_AU.UTF-8"
 export LC_CTYPE="en_AU.UTF-8"
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
