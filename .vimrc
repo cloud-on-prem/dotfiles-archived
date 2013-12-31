@@ -146,3 +146,11 @@ map <Leader>p :set paste!<CR> " Paste stuff like a boss
 map <Leader>v :vsp<CR> " Open a split window
 map <Leader>w <C-w>w " Cycle between windows
 map <Leader>f :NERDTreeFind<CR> " Show the current file in Nerdtree
+
+" Some Linux distributions set filetype in /etc/vimrc.
+" Clear filetype flags before changing runtimepath to force Vim to reload them.
+filetype off
+filetype plugin indent off
+set runtimepath+=/usr/local/go/misc/vim
+filetype plugin indent on
+syntax on
