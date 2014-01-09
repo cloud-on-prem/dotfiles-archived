@@ -58,7 +58,8 @@ Bundle 'scrooloose/syntastic'
 
 " Look and Feel
 set background=dark
-colorscheme molokai
+" colorscheme molokai
+colorscheme solarized
 set cursorline " Highlight the current line
 " set cuc cul " Highlight active column
 set number
@@ -72,6 +73,7 @@ set encoding=utf-8
 set fileencodings=utf-8
 set t_Co=256               " enable 256-color mode.
 syntax enable              " enable syntax highlighting (previously syntax on).
+set term=screen-256color
 
 " if !exists('g:airline_symbols')
 "   let g:airline_symbols = {}
@@ -154,3 +156,6 @@ filetype plugin indent off
 set runtimepath+=/usr/local/go/misc/vim
 filetype plugin indent on
 syntax on
+
+"Run Rspec Files
+nnoremap <Leader>r :execute ":!clear && bundle exec rspec %:" . line(".")<CR>
