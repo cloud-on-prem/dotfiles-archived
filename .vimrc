@@ -158,4 +158,4 @@ filetype plugin indent on
 syntax on
 
 "Run Rspec Files
-nnoremap <Leader>r :execute ":!clear && bundle exec rspec %:" . line(".")<CR>
+nnoremap <leader>r :w\|:call Send_to_Tmux("clear && bundle exec rspec %:" . line(".") . " \n")<CR>
