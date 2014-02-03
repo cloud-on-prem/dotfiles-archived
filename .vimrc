@@ -159,7 +159,7 @@ filetype plugin indent on
 syntax on
 
 "Run Rspec Files
-nnoremap <leader>r :w\|:call VimuxRunCommand("clear && zeus rspec ". bufname("%") . ":" . line(".") . " --format progress --format documentation")<CR>
+nnoremap <leader>r :w\|:call VimuxRunCommand("clear && zeus rspec --format progress --format documentation ". bufname("%") . ":" . line("."))<CR>
 
 "Update Ctags
 nnoremap <Leader>ct :!sudo bash ~/.dotfiles/ctags-auto.sh<CR>
