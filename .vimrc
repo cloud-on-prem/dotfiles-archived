@@ -54,7 +54,7 @@ Bundle 'wookiehangover/jshint.vim'
 " Bundle 'Lokaltog/powerline-fonts'
 " Bundle 'tpope/vim-fugitive'
 Bundle 'mhinz/vim-signify'
-Bundle 'scrooloose/syntastic'
+Bundle 'ags/tslime.vim'
 
 " Look and Feel
 set background=dark
@@ -159,3 +159,6 @@ syntax on
 
 "Run Rspec Files
 nnoremap <leader>r :w\|:call Send_to_Tmux("clear && bundle exec rspec %:" . line(".") . " \n")<CR>
+
+"Update Ctags
+nnoremap <Leader>ct :!sudo bash ~/.dotfiles/ctags-auto.sh<CR>
