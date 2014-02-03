@@ -23,7 +23,7 @@ class Cloud < Thor
     end
 
     # Put Tmux SSH RC into the correct place;
-    system("cat ~/.dotfiles/.ssh.tmux.rc > ~/.ssh/rc")
+    system("cat ~/.dotfiles/.ssh.tmux.rc > ~/.ssh/rc") unless `uname`.chomp == "Darwin"
 
     system("source ~/.bashrc")
     puts "✎ Sourced .bashrc"
