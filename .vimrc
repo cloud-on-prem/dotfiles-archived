@@ -55,6 +55,7 @@ Bundle 'wookiehangover/jshint.vim'
 " Bundle 'tpope/vim-fugitive'
 Bundle 'mhinz/vim-signify'
 Bundle 'ags/tslime.vim'
+Bundle 'benmills/vimux'
 
 " Look and Feel
 set background=dark
@@ -158,7 +159,7 @@ filetype plugin indent on
 syntax on
 
 "Run Rspec Files
-nnoremap <leader>r :w\|:call Send_to_Tmux("clear && bundle exec rspec %:" . line(".") . " \n")<CR>
+nnoremap <leader>r :w\|:call VimuxRunCommand("clear && bundle exec rspec ". bufname("%") . ":" . line(".") . " \n")<CR>
 
 "Update Ctags
 nnoremap <Leader>ct :!sudo bash ~/.dotfiles/ctags-auto.sh<CR>
