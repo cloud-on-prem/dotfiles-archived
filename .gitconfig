@@ -12,12 +12,13 @@
     dk = diff --check
     dck = diff --cached --check
     #############
-    ; ls = log --oneline
     ls = log --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --graph --decorate
     lg = log --oneline --graph --decorate
     #############
     human = name-rev --name-only --refs=refs/heads/*
     co = checkout
+    ci = commit
+    ad = add -p
 [core]
 	filemode = false
 	editor = /usr/bin/vim
