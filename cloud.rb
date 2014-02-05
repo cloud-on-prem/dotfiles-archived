@@ -25,6 +25,9 @@ class Cloud < Thor
     # Put Tmux SSH RC into the correct place;
     system("cat ~/.dotfiles/.ssh.tmux.rc > ~/.ssh/rc") unless `uname`.chomp == "Darwin"
 
+    # Put mux files in the right place
+    system("cp ~/.dotfiles/.tmuxinator/*.yml ~/.tmuxinator/")
+
     system("source ~/.bashrc")
     puts "ϟ Sourced .bashrc"
     puts "☀ All Done!"
