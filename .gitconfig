@@ -17,7 +17,7 @@
     #############
     human = name-rev --name-only --refs=refs/heads/*
     co = checkout
-    ci = commit
+    ci = commit -v
     ad = add -p
 [core]
 	filemode = false
