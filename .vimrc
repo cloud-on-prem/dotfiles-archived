@@ -144,8 +144,10 @@ set ttymouse=xterm2
 
 map <Leader>V :e $MYVIMRC<CR> " Open Vimrc on a whim
 map <Leader>p :set paste!<CR> " Paste stuff like a boss
-map <Leader>v :vsp<CR> " Open a split window
+map <Leader>\ :vsp<CR> " Open a split window
+map <Leader>- :split<CR> " Open a split window
 map <Leader>w <C-w>w " Cycle between windows
+map <Leader>q :q<CR> " Quit a Window
 map <Leader>f :NERDTreeFind<CR> " Show the current file in Nerdtree
 
 " Some Linux distributions set filetype in /etc/vimrc.
