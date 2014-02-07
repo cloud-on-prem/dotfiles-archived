@@ -164,6 +164,11 @@ nnoremap <leader>r :w\|:call VimuxRunCommand("clear && zeus rspec --format progr
 "Update Ctags
 nnoremap <Leader>ct :!sudo bash ~/.dotfiles/ctags-auto.sh<CR>
 
+" Aggressive autosaving
+  autocmd InsertLeave * silent! update
+  autocmd CursorMoved * silent! update
+  autocmd BufLeave,FocusLost * silent! wall
+
 " Dim inactive windows using 'colorcolumn' setting
 " This tends to slow down redrawing, but is very useful.
 " Based on https://groups.google.com/d/msg/vim_use/IJU-Vk-QLJE/xz4hjPjCRBUJ
