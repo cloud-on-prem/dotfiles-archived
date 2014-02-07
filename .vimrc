@@ -57,8 +57,8 @@ Bundle 'SirVer/ultisnips'
 
 " Look and Feel
 set background=dark
-" colorscheme molokai
-colorscheme solarized
+colorscheme molokai
+" colorscheme solarized
 set cursorline " Highlight the current line
 " set cuc cul " Highlight active column
 set number
