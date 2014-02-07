@@ -50,12 +50,10 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'wookiehangover/jshint.vim'
-" Bundle 'bling/vim-airline'
-" Bundle 'Lokaltog/powerline-fonts'
-" Bundle 'tpope/vim-fugitive'
 Bundle 'mhinz/vim-signify'
 Bundle 'ags/tslime.vim'
 Bundle 'benmills/vimux'
+Bundle 'SirVer/ultisnips'
 
 " Look and Feel
 set background=dark
