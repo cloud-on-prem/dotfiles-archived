@@ -138,3 +138,9 @@ export LC_CTYPE="en_AU.UTF-8"
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+
+# Disable Ctrl+s Suspend
+stty stop ''
+stty start ''
+stty -ixon
+stty -ixoff
