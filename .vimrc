@@ -166,9 +166,9 @@ nnoremap <leader>gb :call VimuxRunCommand("git log -20 --pretty='%h %C(yellow)%a
 nnoremap <Leader>ct :!sudo bash ~/.dotfiles/ctags-auto.sh<CR>
 
 " Aggressive autosaving
-  autocmd InsertLeave * silent! update
-  autocmd CursorMoved * silent! update
-  autocmd BufLeave,FocusLost * silent! wall
+  " autocmd InsertLeave * silent! update
+  " autocmd CursorMoved * silent! update
+  " autocmd BufLeave,FocusLost * silent! wall
 
 " Dim inactive windows using 'colorcolumn' setting
 " This tends to slow down redrawing, but is very useful.
