@@ -57,8 +57,8 @@ Bundle 'SirVer/ultisnips'
 
 " Look and Feel
 set background=dark
-colorscheme molokai
-" colorscheme solarized
+" colorscheme molokai
+colorscheme solarized
 set cursorline " Highlight the current line
 " set cuc cul " Highlight active column
 set number
@@ -127,13 +127,11 @@ hi link coffeeSpaceError NONE
 " No swp files
 set noswapfile
 
-
 " Set the status line powered by fugitive
 " set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Set up syntaxes
 au BufRead,BufNewFile *.rabl setf ruby
-
 
 " Mouse for scrolling etc in console.
 set mouse=a
