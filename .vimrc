@@ -198,3 +198,6 @@ augroup DimInactiveWindows
   au WinEnter * set cursorline
   au WinLeave * set nocursorline
 augroup END
+
+" Fix Ctrlp root finding problem
+let ctrlp_working_path_mode=''
