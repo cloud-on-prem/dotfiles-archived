@@ -142,8 +142,8 @@ set ttymouse=xterm2
 
 map <Leader>V :e $MYVIMRC<CR> " Open Vimrc on a whim
 map <Leader>p :set paste!<CR> " Paste stuff like a boss
-map <Leader>\ :vsp<CR> " Open a split window
-map <Leader>- :split<CR> " Open a split window
+map <Leader>\ :botright vnew<CR> " Open a split window on the right
+map <Leader>- :botright new<CR> " Open a split window bottom
 map <Leader>w <C-w>w " Cycle between windows
 map <Leader>q :q<CR> " Quit a Window
 map <Leader>f :NERDTreeFind<CR> " Show the current file in Nerdtree
