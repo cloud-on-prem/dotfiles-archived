@@ -161,7 +161,7 @@ filetype plugin indent on
 syntax on
 
 "Run Rspec Files
-nnoremap <leader>r :w\|:call VimuxRunCommand("clear && zeus rspec --format progress --format documentation ". bufname("%") . ":" . line("."))<CR>
+nnoremap <leader>r :w\|:call VimuxRunCommand("clear && zeus rspec --format documentation ". bufname("%") . ":" . line("."))<CR>
 
 "Git Blame
 nnoremap <leader>gb :call VimuxRunCommand("git log -20 --pretty='%h %C(yellow)%an %Creset %cr: %s ' " . bufname("%") )<CR>
