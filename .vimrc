@@ -67,7 +67,8 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 " Look and Feel
 set background=dark
 " colorscheme molokai
-colorscheme solarized
+" colorscheme solarized
+colorscheme vividchalk
 set cursorline " Highlight the current line
 " set cuc cul " Highlight active column
 set number
@@ -106,7 +107,7 @@ set term=screen-256color
 " let g:airline_symbols.whitespace = 'Ξ'
 
 if has('gui_running')
-  set guifont=Inconsolata:h18
+  set guifont=Inconsolata:h14:
 endif
 
 
