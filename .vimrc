@@ -57,6 +57,7 @@ Bundle 'benmills/vimux'
 Bundle 'SirVer/ultisnips'
 " Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
+Bundle 'majutsushi/tagbar'
 
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
@@ -122,8 +123,12 @@ let g:multi_cursor_quit_key='<Esc>'
 
 " Tabs
 map <C-t> :tabnew<CR>
-map <C-S-Right> gt
-map <C-S-Left> gT
+map <Leader>h gt
+map <Leader>l gT
+map <Leader>T <C-W>T<CR> " Move split into a new Tab
+
+" Tag bar
+map <Leader>tg :TagbarToggle<CR>
 
 let NERDTreeShowHidden=1
 
