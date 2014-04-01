@@ -228,3 +228,6 @@ inoremap <silent> <C-s> <C-O>:update<CR>
     \ escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
     \ gV:call setreg('"', old_reg, old_regtype)<CR>
 " -------------------------------------------------
+
+" Quick Ack Word
+nnoremap <Leader>a :Ack <C-r><C-w>
