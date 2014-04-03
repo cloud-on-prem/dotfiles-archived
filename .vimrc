@@ -197,3 +197,6 @@ inoremap <silent> <C-s> <C-O>:update<CR>
 
 " Quick Ack Word
 nnoremap <Leader>a :Ack <C-r><C-w>
+
+set exrc            " enable per-directory .vimrc files
+set secure          " disable unsafe commands in local .vimrc files
