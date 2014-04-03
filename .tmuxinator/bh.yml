@@ -25,9 +25,9 @@ windows:
         - Vim: vim
         - All-Purpose:
           - clear
-        - logs:
-          - sleep 10
-          # - tail -f /tmp/god/unicorn.log | grep -v "GET /assets"
+        - server:
+          - sleep 2
+          - rerun 'rackup -p 3000'
   - MyDotFiles:
       panes:
         - Vim:
