@@ -29,7 +29,15 @@ windows:
           - sleep 2
           - rerun 'rackup -p 3000'
   - MyDotFiles:
+      layout: 8f2c,283x70,0,0{204x70,0,0,2,78x70,205,0[78x36,205,0,8,78x33,205,37,9]}
       panes:
         - Vim:
-          - cd ~/.dotfiles/ && vim
+          - cd ~/.dotfiles/
+          - vim
+        - All-Purpose:
+          - cd ~/.dotfiles/
+          - clear
+        - Monitor:
+          - cd ~/.dotfiles/
+          - top
 
