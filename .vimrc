@@ -130,7 +130,7 @@ map <Leader>T <C-W>T<CR> " Move split into a new Tab
 
 " Tag bar
 let g:tagbar_left=1
-map <Leader>tg :TagbarToggle<CR>
+map <Leader>tg :TagbarOpenAutoClose<CR>
 
 let NERDTreeShowHidden=1
 
