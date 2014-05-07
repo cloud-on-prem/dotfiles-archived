@@ -10,6 +10,7 @@
 
     `$ cd .dotfiles`  
     `$ ruby ./cloud.rb make_it_rain`
+4. `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
 3. Install configured bundles:  
     Launch `vim`, run `:BundleInstall`
