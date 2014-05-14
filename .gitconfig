@@ -22,3 +22,5 @@
 [core]
 	filemode = false
 	editor = /usr/bin/vim
+[rerere]
+	enabled = true
