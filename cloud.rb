@@ -10,7 +10,7 @@ class Cloud < Thor
 
   desc "make_it_rain", "copies all the files into relevant places"
   def make_it_rain
-    files = ['.bashrc', '.vimrc', '.bash_aliases', '.gitconfig', '.tmux.conf', '.git-completion.bash', 'ctags-auto.sh', '.toprc']
+    files = ['.bashrc', '.vimrc', '.bash_aliases', '.gitconfig', '.tmux.conf', '.git-completion.bash', 'ctags-auto.sh', '.toprc', '.ackrc']
     files.each  do |file|
       old_file_ref = File.expand_path("~/#{file}")
       new_file_ref = File.expand_path("~/.dotfiles/#{file}")

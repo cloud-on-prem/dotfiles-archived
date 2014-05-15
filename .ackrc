@@ -1,0 +1,2 @@
+--ignore-file=match:-*.log
+--ignore-file=is:tags
