@@ -11,6 +11,7 @@ alias tmn='tmux new -s '
 alias tmk='tmux kill-session -t '
 alias tmls='tmux ls'
 alias restartnet="sudo nohup sh -c 'invoke-rc.d networking stop; date; echo sleeping; sleep 2; echo waking; date; invoke-rc.d networking start'"
+alias gfr="git fetch && git rebase"
 
 # Empower my idiosyncratic typos
 alias gti='git'
