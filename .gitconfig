@@ -19,6 +19,7 @@
     co = checkout
     ci = commit -v
     ad = add -p
+    p = push
 [core]
 	filemode = false
 	editor = /usr/bin/vim
