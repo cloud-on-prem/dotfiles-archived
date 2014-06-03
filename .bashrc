@@ -182,4 +182,14 @@ function parse_git_dirty {
   fi
 }
 
-export PS1="\[\e[35m\]✈ \[\e[m\] \[\e[36m\]~/\[\e[m\]\[\e[36m\]\W\[\e[m\]\[\e[32m\] \[\e[m\]\[\e[33m\]\`parse_git_branch\`\[\e[m\] "
+function os {
+  if [ "$(uname)" == "Darwin" ]; then
+    echo ""
+  elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    echo "✈"
+  elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+    echo "☢"
+  fi
+}
+
+export PS1="\[\e[32m\]\`os\`\[\e[m\] \[\e[36m\]~/\[\e[m\]\[\e[36m\]\W\[\e[m\]\[\e[32m\] \[\e[m\]\[\e[33m\]\`parse_git_branch\`\[\e[m\] "
