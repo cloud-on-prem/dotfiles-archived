@@ -1,5 +1,7 @@
 alias c='clear'
 alias fs='foreman start'
+alias refresh='source ~/.bashrc'
+alias mir='cd ~/.dotfiles && ruby ./cloud.rb make_it_rain && refresh && c && cd -'
 alias vu='vagrant up'
 alias vh='vagrant halt'
 alias vs='ssh vagrant'
