@@ -137,6 +137,7 @@ map <Leader>- :sp<CR> " Open a split window bottom
 map <Leader>w <C-w>w " Cycle between windows
 map <Leader>q :q<CR> " Quit a Window
 map <Leader>f :NERDTreeFind<CR> " Show the current file in Nerdtree
+nnoremap <Leader>i ggVG=``
 
 " Some Linux distributions set filetype in /etc/vimrc.
 " Clear filetype flags before changing runtimepath to force Vim to reload them.
@@ -164,11 +165,11 @@ vnoremap <silent> <C-s> <C-C>:update<CR>
 inoremap <silent> <C-s> <C-O>:update<CR>
 
 " Search for selected text, forwards or backwards
-  vnoremap <silent> * :<C-U>
-    \ let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-    \ gvy/<C-R><C-R>=substitute(
-    \ escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-    \ gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> * :<C-U>
+      \ let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+      \ gvy/<C-R><C-R>=substitute(
+      \ escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+      \ gV:call setreg('"', old_reg, old_regtype)<CR>
 " -------------------------------------------------
 
 " Quick Ack Word
