@@ -12,6 +12,7 @@ alias tma='tmux a -t '
 alias tmn='tmux new -s '
 alias tmk='tmux kill-session -t '
 alias tmls='tmux ls'
+alias zc='zeus console'
 alias restartnet="sudo nohup sh -c 'invoke-rc.d networking stop; date; echo sleeping; sleep 2; echo waking; date; invoke-rc.d networking start'"
 alias gfr="git fetch && git rebase"
 
