@@ -158,6 +158,8 @@ nnoremap <Leader>ct :!sudo bash ~/.dotfiles/ctags-auto.sh<CR>
 
 " Fix Ctrlp root finding problem
 let ctrlp_working_path_mode=''
+"Make ctrlp open on top
+let g:ctrlp_match_window = 'top'
 
 
 noremap <silent> <C-s> :update<CR>
