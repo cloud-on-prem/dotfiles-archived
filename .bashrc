@@ -115,6 +115,7 @@ bx() { if [[ $1 == "bp" ]]; then command shift && $HOME/.rbenv/shims/bundle exec
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 EDITOR=vi
 export EDITOR
