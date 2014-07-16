@@ -59,6 +59,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-abolish'
 Bundle 'nginx.vim'
+Bundle 'vim-scripts/ZoomWin'
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
@@ -177,6 +178,9 @@ vnoremap <silent> * :<C-U>
 
 " Quick Ack Word
 nnoremap <Leader>a :Ack <C-r><C-w>
+
+" Zoom in and Zoom out Vim windows
+nnoremap <Leader>z :ZoomWin <CR>
 
 set exrc            " enable per-directory .vimrc files
 set secure          " disable unsafe commands in local .vimrc files
