@@ -67,8 +67,8 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " Look and Feel
 set background=dark
-colorscheme molokai
-" colorscheme solarized
+" colorscheme molokai
+colorscheme solarized
 " colorscheme vividchalk
 
 set cursorline " Highlight the current line
