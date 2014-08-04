@@ -107,6 +107,7 @@ map <C-t> :tabnew<CR>
 map <Leader>h gt
 map <Leader>l gT
 map <Leader>T <C-W>T<CR> " Move split into a new Tab
+map <Leader>X :tabclose<CR> " Close current Tab
 
 " Tag bar
 let g:tagbar_left=1
