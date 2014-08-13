@@ -67,8 +67,8 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " Look and Feel
 set background=dark
-" colorscheme molokai
-colorscheme solarized
+colorscheme molokai
+" colorscheme solarized
 " colorscheme vividchalk
 
 set cursorline " Highlight the current line
@@ -135,6 +135,7 @@ set ttymouse=xterm2
 
 map <Leader>V :e $MYVIMRC<CR> " Open Vimrc on a whim
 map <Leader>p :set paste!<CR> " Paste stuff like a boss
+nnoremap "p :reg<CR> " Show me the clipboard registry already!
 map <Leader>\ :vsp<CR> " Open a split window on the right
 map <Leader>- :sp<CR> " Open a split window bottom
 map <Leader>w <C-w>w " Cycle between windows
