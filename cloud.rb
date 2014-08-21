@@ -19,7 +19,8 @@ class Cloud < Thor
       'ctags-auto.sh',
       '.toprc',
       '.ackrc',
-      '.zshrc'
+      '.zshrc',
+      '.zpreztorc'
     ]
 
     files.each  do |file|
