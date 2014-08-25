@@ -1,0 +1,43 @@
+# ~/.tmuxinator/blood-hound.yml
+
+name: bh
+root: ~/work/blood-hound
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - Ruby:
+      layout: b4b0,185x51,0,0{138x51,0,0,46x51,139,0[46x25,139,0,46x25,139,26]}
+      panes:
+        - Vim: vim
+        - All-Purpose:
+          - clear
+        - server:
+          - sleep 2
+          - rerun 'rackup -p 3000'
+  - MyDotFiles:
+      layout: 8f2c,283x70,0,0{204x70,0,0,2,78x70,205,0[78x36,205,0,8,78x33,205,37,9]}
+      panes:
+        - Vim:
+          - cd ~/.dotfiles/
+          - vim
+        - All-Purpose:
+          - cd ~/.dotfiles/
+          - clear
+        - Monitor:
+          - cd ~/.dotfiles/
+          - top
+

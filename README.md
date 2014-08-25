@@ -1,16 +1,20 @@
-## Set up
+Set up
+=========
 
-1. Setup Vundle
+**Clone Repo**
 
-    ```
-      $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    ```
+```sh
+git clone git@bitbucket.org:premjg/my-dotfiles.git ~/.dotfiles
+```
 
-2.  Create Symlinks:
+**Install Babushka**
 
-    `$ cd .dotfiles`  
-    `$ ruby ./cloud.rb make_it_rain`
-4. `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+```sh
+sh -c "`curl https://babushka.me/up`"
+```
 
-3. Install configured bundles:  
-    Launch `vim`, run `:BundleInstall`
+**Run Deps**
+```sh
+cd ~/.dotfiles/
+babushka main
+```
