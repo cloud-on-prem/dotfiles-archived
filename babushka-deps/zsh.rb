@@ -1,7 +1,7 @@
 dep 'zsh-main' do
   requires 'zsh.shell_setup'
   requires 'zsh.shell_setup'
-  requires 'prezto'
+  requires 'prezto-main'
 
   username = shell('whoami')
 
@@ -15,10 +15,43 @@ end
 
 dep 'zsh.bin'
 
-dep 'prezto' do
+dep 'prezto-main' do
+  requires 'prezto-install'
+  requires 'prezto-update'
+end
+
+dep 'prezto-update' do
+
+  def dir
+    "~/.zprezto"
+  end
+
+  def up_to_date?
+    system %Q{
+      cd #{dir}
+      git fetch
+    }
+    0 == shell("git rev-list HEAD...origin/master --count").to_i
+  end
+
+  met? do
+    up_to_date?
+  end
+
+  meet do
+    system %Q{
+      cd #{dir}
+      git fetch
+      git reset origin/master --hard
+    }
+  end
+
+end
+
+dep 'prezto-install' do
 
   dir = "~/.zprezto"
-  repo = "https://github.com/premjg/prezto.git"
+  repo = "git@github.com:premjg/prezto.git"
 
   met? do
     dir.p.exists?
