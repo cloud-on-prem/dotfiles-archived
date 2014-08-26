@@ -39,3 +39,12 @@ fi
 if [ -f ~/.bin/tmuxinator.zsh ]; then
   . ~/.bin/tmuxinator.zsh
 fi
+
+# Fix Tmux pane ssh auth
+if [ -f ~/.dotfiles/scripts/ssh-find-agent.bash ]; then
+  . ~/.dotfiles/scripts/ssh-find-agent.bash
+fi
+
+if ! test $SSH_AUTH_SOCK; then
+  set_ssh_agent_socket
+fi
