@@ -50,6 +50,10 @@ dep 'git-completion.rcfile' do
 end
 
 dep 'ssh_tmux.rcfile' do
+  def sym_file
+    "~/.ssh/rc"
+  end
+
   file_name '.ssh.tmux.rc'
 end
 
