@@ -24,6 +24,9 @@ export EDITOR
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
+# Rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+
 export LC_ALL="en_AU.UTF-8"
 export LC_CTYPE="en_AU.UTF-8"
 
@@ -36,5 +39,3 @@ fi
 if [ -f ~/.bin/tmuxinator.zsh ]; then
   . ~/.bin/tmuxinator.zsh
 fi
-
-
