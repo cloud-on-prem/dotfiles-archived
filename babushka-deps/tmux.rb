@@ -4,9 +4,7 @@ dep 'tmux-main' do
   requires 'tmuxinator-templates'
 end
 
-dep 'tmux.lib' do
-  installs 'tmux > 1.8'
-end
+dep 'tmux.lib'
 
 dep 'tmuxinator.gem'
 
