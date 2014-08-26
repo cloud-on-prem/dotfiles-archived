@@ -18,7 +18,7 @@ dep 'zsh.bin'
 dep 'prezto' do
 
   dir = "~/.zprezto"
-  repo = "https://github.com/sorin-ionescu/prezto.git"
+  repo = "https://github.com/premjg/prezto.git"
 
   met? do
     dir.p.exists?
