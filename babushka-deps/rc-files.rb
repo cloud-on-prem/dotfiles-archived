@@ -23,6 +23,7 @@ end
 dep 'rc-main' do
   requires 'ack.rcfile'
   requires 'gitconfig.rcfile'
+  requires 'git-completion.rcfile'
   requires 'ssh_tmux.rcfile'
   requires 'tmux.rcfile'
   requires 'top.rcfile'
@@ -42,6 +43,10 @@ end
 
 dep 'gitconfig.rcfile' do
   file_name '.gitconfig'
+end
+
+dep 'git-completion.rcfile' do
+  file_name '.git-completion.bash'
 end
 
 dep 'ssh_tmux.rcfile' do
