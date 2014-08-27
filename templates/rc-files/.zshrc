@@ -56,3 +56,8 @@ fi
 if ! test $SSH_AUTH_SOCK; then
   set_ssh_agent_socket
 fi
+
+# Vi mode buffers
+bindkey -a 'gg' beginning-of-buffer-or-history
+bindkey -a 'g~' vi-oper-swap-case
+bindkey -a G end-of-buffer-or-history
