@@ -147,7 +147,7 @@ nnoremap <leader>r :w\|:call VimuxRunCommand("clear && zeus rspec --format docum
 nnoremap <leader>gb :call VimuxRunCommand("git log -20 --pretty='%h %C(yellow)%an %Creset %cr: %s ' " . bufname("%") )<CR>
 
 "Update Ctags
-nnoremap <Leader>ct :!sudo bash ~/.dotfiles/ctags-auto.sh<CR>
+nnoremap <Leader>ct :!sudo bash ~/.dotfiles/scripts/ctags-auto.sh<CR>
 
 " Fix Ctrlp root finding problem
 let ctrlp_working_path_mode=''
