@@ -4,7 +4,7 @@ Set up
 **Clone Repo**
 
 ```sh
-git clone git@bitbucket.org:premjg/my-dotfiles.git ~/.dotfiles
+git clone git@github.com:premjg/dotfiles.git ~/.dotfiles
 ```
 
 **Install Babushka**
