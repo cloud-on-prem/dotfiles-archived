@@ -1,8 +1,9 @@
 dep 'osx' do
   requires 'homebrew.pkg'
-  requires 'virtualbox'
   requires 'brew cask'
-  requires 'boot2docker.bin'
+
+  requires 'virtualbox'
+  requires 'boot2docker'
   requires 'vagrant'
 end
 
@@ -19,11 +20,19 @@ dep 'brew cask' do
   end
 end
 
-dep 'boot2docker.bin'
+dep 'boot2docker' do
+  met? do
+    shell? "brew list boot2docker"
+  end
+
+  meet do
+    shell "brew install boot2docker"
+  end
+end
 
 dep 'virtualbox' do
   met? do
-    shell? "virtualbox -v"
+    shell? "brew cask list virtualbox"
   end
 
   meet do
