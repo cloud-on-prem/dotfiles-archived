@@ -15,7 +15,7 @@ dep 'vundle' do
 
   meet do
     shell "git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
-    shell "vim +PluginInstall +qall"
+    shell "vim -e +PluginInstall +qall"
   end
 end
 

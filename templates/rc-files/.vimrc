@@ -17,38 +17,41 @@ set ttimeoutlen=10         "wait for 10ms after escape
 set hidden                 "Hide the buffers
 set tags=./tags            "Where to find ctags
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
 let mapleader = ";" "set the leader key to ';' (easy to type)
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/vundle'
+Plugin 'kien/ctrlp.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/tComment'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
+Plugin 'tpope/vim-rails'
+Plugin 'othree/html5.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'mattn/emmet-vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'wookiehangover/jshint.vim'
+Plugin 'mhinz/vim-signify'
+Plugin 'tpope/vim-fugitive'
+Plugin 'benmills/vimux'
+Plugin 'SirVer/ultisnips'
+Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/ZoomWin'
+Plugin 'Shougo/neocomplcache.vim'
+
+call vundle#end()
+filetype plugin indent on
+
 "Enable Matchit
 runtime macros/matchit.vim
-
-Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'scrooloose/nerdtree'
-Bundle 'vim-scripts/tComment'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'mileszs/ack.vim'
-Bundle 'rking/ag.vim'
-Bundle 'tpope/vim-rails'
-Bundle 'othree/html5.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'mattn/emmet-vim'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'wookiehangover/jshint.vim'
-Bundle 'mhinz/vim-signify'
-Bundle 'tpope/vim-fugitive'
-Bundle 'benmills/vimux'
-Bundle 'SirVer/ultisnips'
-Bundle 'scrooloose/syntastic'
-Bundle 'majutsushi/tagbar'
-Bundle 'vim-scripts/ZoomWin'
-Bundle 'Shougo/neocomplcache.vim'
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
