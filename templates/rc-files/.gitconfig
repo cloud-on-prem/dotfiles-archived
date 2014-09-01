@@ -1,5 +1,5 @@
 [user]
-	name = ❅ Prem Pillai (@premjg)
+	name = ☀ Prem Pillai (@premjg)
 	email = prem.pillai@gmail.com
 [color]
 	ui = true
@@ -26,3 +26,8 @@
 	editor = /usr/bin/vim
 [rerere]
 	enabled = true
+[merge]
+    tool = vimdiff
+      defaultToUpstream = true
+[push]
+    default = tracking
