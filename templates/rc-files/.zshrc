@@ -31,6 +31,10 @@ if which rbenv >/dev/null; then
   eval "$(rbenv init -)"
 fi
 
+if which chruby >/dev/null; then
+  source /usr/local/share/chruby/chruby.sh
+end
+
 export LC_ALL="en_AU.UTF-8"
 export LC_CTYPE="en_AU.UTF-8"
 
