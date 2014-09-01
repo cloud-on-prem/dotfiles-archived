@@ -58,6 +58,5 @@ if ! test $SSH_AUTH_SOCK; then
 fi
 
 # Vi mode buffers
-bindkey -a 'gg' beginning-of-buffer-or-history
-bindkey -a 'g~' vi-oper-swap-case
-bindkey -a G end-of-buffer-or-history
+bindkey '^R' history-incremental-search-backward
+unsetopt sharehistory
