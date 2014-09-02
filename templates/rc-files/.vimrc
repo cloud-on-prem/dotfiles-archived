@@ -59,9 +59,11 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " Look and Feel
 set background=dark
-colorscheme molokai
-" colorscheme solarized
-" colorscheme vividchalk
+if filereadable( expand("$HOME/.vim/bundle/vim-colorschemes/colors/molokai.vim") )
+  colorscheme molokai
+  " colorscheme solarized
+  " colorscheme vividchalk
+end
 
 set cursorline " Highlight the current line
 " set cuc cul " Highlight active column
