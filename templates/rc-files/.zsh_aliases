@@ -21,3 +21,5 @@ alias grb='git branch --merged master | grep -v "\* master" | xargs -n 1 git bra
 
 # Empower my idiosyncratic typos
 alias gti='git'
+
+alias bx='bundle exec'
