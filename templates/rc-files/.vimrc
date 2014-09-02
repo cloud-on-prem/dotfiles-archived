@@ -177,8 +177,8 @@ nnoremap <Leader>z :ZoomWin <CR>
 set exrc            " enable per-directory .vimrc files
 set secure          " disable unsafe commands in local .vimrc files
 
-
 " Auto complete
+set omnifunc=syntaxcomplete#Complete
 "
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
