@@ -26,7 +26,7 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle'
 Plugin 'kien/ctrlp.vim'
-Plugin 'flazz/vim-colorschemes'
+Plugin 'premjg/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/tComment'
 Plugin 'bronson/vim-trailing-whitespace'
