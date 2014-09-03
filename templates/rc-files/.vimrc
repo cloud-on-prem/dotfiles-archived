@@ -270,4 +270,4 @@ let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 """ End of AutoComplete
 
-set spell spelllang=en_us
+command! Sc set spell!
