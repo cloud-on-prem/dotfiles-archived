@@ -33,7 +33,7 @@ fi
 
 if which chruby >/dev/null; then
   source /usr/local/share/chruby/chruby.sh
-end
+fi
 
 export LC_ALL="en_AU.UTF-8"
 export LC_CTYPE="en_AU.UTF-8"
