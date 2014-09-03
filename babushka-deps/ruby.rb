@@ -32,7 +32,7 @@ dep 'ruby-install' do
   end
 
   meet do
-    shell "rbenv install 2.1.2"
+    shell "source ~/.zshrc && rbenv install 2.1.2"
   end
 end
 
@@ -40,6 +40,7 @@ dep 'ruby-switch' do
   requires 'ruby-build'
 
   met? do
+    shell "rbenv rehash"
     /ruby(.?)(2\.1\.2)/.match(`ruby -v`)
   end
 
