@@ -274,3 +274,4 @@ let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 command! Sc set spell!
 command! Refresh so $MYVIMRC
+let g:airline_powerline_fonts = 1
