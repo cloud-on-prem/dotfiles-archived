@@ -67,6 +67,10 @@ if filereadable( expand("$HOME/.vim/bundle/vim-colorschemes/colors/gruvbox.vim")
   " colorscheme vividchalk
 end
 
+" Airline conf
+let g:airline_theme='wombat'
+let g:airline_powerline_fonts = 1
+
 set cursorline " Highlight the current line
 " set cuc cul " Highlight active column
 set number
@@ -274,4 +278,3 @@ let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 command! Sc set spell!
 command! Refresh so $MYVIMRC
-let g:airline_powerline_fonts = 1
