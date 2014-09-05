@@ -3,7 +3,7 @@ module Babushka
     class Os
       class << self
         def osx?
-          `uname` == "Darwin"
+          !!(`uname` =~ /Darwin/)
         end
 
         def linux?
