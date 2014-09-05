@@ -56,3 +56,6 @@ fi
 # Vi mode buffers
 bindkey '^R' history-incremental-search-backward
 unsetopt sharehistory
+
+#Go
+export PATH="/usr/local/go/bin:$PATH"
