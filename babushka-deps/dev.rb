@@ -1,6 +1,7 @@
 dep 'dev' do
   requires 'vim'
   requires 'tree.bin'
+  requires 'mercurial.bin'
 end
 
 dep 'vim' do
@@ -21,3 +22,6 @@ dep 'vundle' do
 end
 
 dep 'tree.bin'
+dep 'mercurial.bin' do
+  met? { shell?("hg --version") }
+end
