@@ -31,6 +31,7 @@ dep 'go-main' do
   else
     requires 'golang.bin.linux'
   end
+  requires 'go-path'
 end
 
 dep 'golang.bin' do
@@ -51,5 +52,26 @@ dep 'golang.bin.linux' do
       # sudo tar -C /usr/local -xzf #{go_version}.linux-amd64.tar.gz
       # rm /tmp/#{go_version}* -f
     }
+  end
+end
+
+dep 'go-path', :path do
+  path.default("~/projects/")
+
+  go_root = File.join(path, "go")
+  bin_path = File.join(go_root, "bin").to_s
+  pkg_path = File.join(go_root, "pkg").to_s
+  src_path = File.join(go_root, "src").to_s
+
+  met? do
+    bin_path.p.exists?
+    pkg_path.p.exists?
+    src_path.p.exists?
+  end
+
+  meet do
+    `mkdir -p #{bin_path}`
+    `mkdir -p #{pkg_path}`
+    `mkdir -p #{src_path}`
   end
 end
