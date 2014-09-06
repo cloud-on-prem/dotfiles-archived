@@ -1,5 +1,6 @@
 dep 'dev' do
   requires 'vim'
+  requires 'tree.bin'
 end
 
 dep 'vim' do
@@ -18,3 +19,5 @@ dep 'vundle' do
     shell "vim +PluginInstall +qall"
   end
 end
+
+dep 'tree.bin'
