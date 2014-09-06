@@ -47,6 +47,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/ZoomWin'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'bling/vim-airline'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on

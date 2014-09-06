@@ -59,5 +59,5 @@ unsetopt sharehistory
 
 #Go
 export PATH="/usr/local/go/bin:$PATH"
-export GOPATH="~/projects/go"
+export GOPATH="$HOME/projects/go"
 export PATH=$PATH:$GOPATH/bin
