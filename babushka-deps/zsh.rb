@@ -27,11 +27,10 @@ dep 'prezto-update' do
   end
 
   def up_to_date?
-    system %Q{
-      cd #{dir}
-      git fetch
-    }
-    0 == shell("git rev-list HEAD...origin/master --count").to_i
+    cd dir do
+      shell("git fetch")
+      0 == shell("git rev-list HEAD...origin/master --count").to_i
+    end
   end
 
   met? do
@@ -39,11 +38,9 @@ dep 'prezto-update' do
   end
 
   meet do
-    system %Q{
-      cd #{dir}
-      git fetch
-      git reset origin/master --hard
-    }
+    cd dir do
+      shell("git fetch && git reset origin/master --hard")
+    end
   end
 
 end

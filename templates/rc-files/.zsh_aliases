@@ -26,3 +26,5 @@ alias gti='git'
 alias bx='bundle exec'
 alias zc='zeus console'
 alias fs='foreman start'
+
+alias bab='babushka'
