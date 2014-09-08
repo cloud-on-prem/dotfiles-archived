@@ -34,6 +34,7 @@ dep 'rc-main' do
   requires 'zlogin.rcfile'
   requires 'zlogout.rcfile'
   requires 'zshenv.rcfile'
+  requires 'rspec.rcfile'
 end
 
 
@@ -91,4 +92,8 @@ end
 
 dep 'zsh_aliases.rcfile' do
   file_name '.zsh_aliases'
+end
+
+dep 'rspec.rcfile' do
+  file_name '.rspec'
 end
