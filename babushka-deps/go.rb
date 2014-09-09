@@ -46,12 +46,11 @@ dep 'golang.bin.linux' do
     tmp = "/tmp"
     go_version = Babushka::Go.version_with_name
 
-    system %Q{
-      cd #{tmp}
-      # wget http://golang.org/dl/#{go_version}.linux-amd64.tar.gz
-      # sudo tar -C /usr/local -xzf #{go_version}.linux-amd64.tar.gz
-      # rm /tmp/#{go_version}* -f
-    }
+    cd tmp do
+      shell "wget http://golang.org/dl/#{go_version}.linux-amd64.tar.gz"
+      shell "sudo tar -C /usr/local -xzf #{go_version}.linux-amd64.tar.gz"
+      shell "rm /tmp/#{go_version}* -f"
+    end
   end
 end
 
