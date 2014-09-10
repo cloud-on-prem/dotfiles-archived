@@ -23,6 +23,7 @@ alias gco='git branch | cut -c 3- | selecta | xargs git checkout && clear'
 alias grb='git branch --merged master | grep -v "\* master" | xargs -n 0 git branch -d'
 alias gti='git'
 alias gset='git push --set-upstream origin `git symbolic-ref --short -q HEAD`'
+alias gpush='git push'
 
 alias bx='bundle exec'
 alias zc='zeus console'
