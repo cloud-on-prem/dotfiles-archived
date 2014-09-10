@@ -30,7 +30,6 @@ Plugin 'premjg/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/tComment'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'othree/html5.vim'
@@ -178,7 +177,7 @@ vnoremap <silent> * :<C-U>
 " -------------------------------------------------
 
 " Quick Ack Word
-nnoremap <Leader>a :Ack <C-r><C-w>
+nnoremap <Leader>a :Ag <C-r><C-w>
 
 " Zoom in and Zoom out Vim windows
 nnoremap <Leader>z :ZoomWin <CR>

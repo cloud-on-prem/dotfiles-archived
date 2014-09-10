@@ -2,6 +2,7 @@ dep 'dev' do
   requires 'vim'
   requires 'tree.bin'
   requires 'mercurial.bin'
+  requires 'ag'
 end
 
 dep 'vim' do
@@ -24,4 +25,24 @@ end
 dep 'tree.bin'
 dep 'mercurial.bin' do
   met? { shell?("hg --version") }
+end
+
+dep 'ag' do
+  if Babushka::Helpers::Os.osx?
+    requires 'the_silver_searcher.bin'
+  else
+    requires 'silversearcher-ag.bin'
+  end
+end
+
+dep 'the_silver_searcher.bin' do
+  met? do
+    shell? "ag --version"
+  end
+end
+
+dep 'silversearcher-ag.bin' do
+  met? do
+    shell? "ag --version"
+  end
 end
