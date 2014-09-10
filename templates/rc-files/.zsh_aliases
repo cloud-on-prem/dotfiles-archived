@@ -1,6 +1,5 @@
 alias c='clear'
 alias refresh='source ~/.zshrc'
-alias mir='cd ~/.dotfiles && ruby ./cloud.rb make_it_rain && refresh && c && cd -'
 alias restartnet="sudo nohup sh -c 'invoke-rc.d networking stop; date; echo sleeping; sleep 2; echo waking; date; invoke-rc.d networking start'"
 
 alias v='vim'
