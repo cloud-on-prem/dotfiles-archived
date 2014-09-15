@@ -24,7 +24,7 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'premjg/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
@@ -47,6 +47,7 @@ Plugin 'vim-scripts/ZoomWin'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'bling/vim-airline'
 Plugin 'fatih/vim-go'
+Plugin 'evanmiller/nginx-vim-syntax'
 
 call vundle#end()
 filetype plugin indent on

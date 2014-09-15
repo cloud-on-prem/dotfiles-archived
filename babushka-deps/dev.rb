@@ -31,7 +31,7 @@ dep 'ag' do
   if Babushka::Helpers::Os.osx?
     requires 'the_silver_searcher.bin'
   else
-    requires 'silversearcher-ag.bin'
+    requires 'silversearcher-ag-src'
   end
 end
 
@@ -41,8 +41,31 @@ dep 'the_silver_searcher.bin' do
   end
 end
 
-dep 'silversearcher-ag.bin' do
+dep 'silversearcher-ag-src' do
+  requires %w[
+    libpcre3-dev.managed
+    zlib1g-dev.managed
+    liblzma-dev
+  ]
+
   met? do
     shell? "ag --version"
   end
+
+  meet {
+    uri = 'https://github.com/ggreer/the_silver_searcher/archive/master.tar.gz'
+    Babushka::Resource.extract(uri)
+    cd "~/.babushka/build/master/the_silver_searcher-master" do
+      shell "./build.sh"
+      shell "make install", :sudo => true
+    end
+  }
 end
+
+dep 'libpcre3-dev.managed' do provides [] end
+dep 'zlib1g-dev.managed'   do provides [] end
+dep 'liblzma-dev' do
+  met? { shell? "dpkg -s liblzma-dev" }
+  meet { shell "apt-get install -y --force-yes liblzma-dev", :sudo => true }
+end
+
