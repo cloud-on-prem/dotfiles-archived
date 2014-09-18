@@ -6,8 +6,7 @@ alias v='vim'
 
 alias vu='vagrant up'
 alias vh='vagrant halt'
-alias vs='ssh vagrant'
-alias vsp='ssh personal'
+alias vs='vagrant ssh'
 alias vr='vagrant resume'
 alias vsusp='vagrant suspend'
 
