@@ -3,6 +3,7 @@ dep 'dev' do
   requires 'tree.bin'
   requires 'mercurial.bin'
   requires 'ag'
+  requires 'bower'
 end
 
 dep 'vim' do
@@ -69,3 +70,13 @@ dep 'liblzma-dev' do
   meet { shell "apt-get install -y --force-yes liblzma-dev", :sudo => true }
 end
 
+
+dep "bower" do
+  met? do
+    shell? "bower --version"
+  end
+
+  meet do
+    shell "sudo npm install -g bower"
+  end
+end
