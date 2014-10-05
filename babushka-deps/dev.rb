@@ -4,6 +4,7 @@ dep 'dev' do
   requires 'mercurial.bin'
   requires 'ag'
   requires 'bower'
+  requires 'redis-server.managed'
 end
 
 dep 'vim' do
@@ -80,3 +81,5 @@ dep "bower" do
     shell "sudo npm install -g bower"
   end
 end
+
+dep 'redis-server.managed' do provides [] end
