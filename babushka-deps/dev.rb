@@ -5,7 +5,10 @@ dep 'dev' do
   requires 'ag'
   requires 'bower'
   requires 'redis-server.managed'
+  requires 'ii.managed'
 end
+
+dep 'ii.managed'
 
 dep 'vim' do
   requires 'vundle'
