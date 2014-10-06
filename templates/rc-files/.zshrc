@@ -61,3 +61,8 @@ unsetopt sharehistory
 export PATH="/usr/local/go/bin:$PATH"
 export GOPATH="$HOME/projects/go"
 export PATH=$PATH:$GOPATH/bin
+
+
+if [ -f ~/.zsh_profile ]; then
+  . ~/.zsh_profile
+fi
