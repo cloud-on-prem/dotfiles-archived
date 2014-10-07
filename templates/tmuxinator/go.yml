@@ -34,3 +34,8 @@ windows:
         - server:
           - sleep 2
           - clear
+  - IRC:
+      panes:
+        - weechat:
+          - cd ~/
+          - weechat
