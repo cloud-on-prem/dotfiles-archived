@@ -21,6 +21,8 @@
     ad = add -p
     p = push
     oops = reset --soft HEAD^1
+    wip = !git add -A && git commit -m "WIP"
+    unwip = reset HEAD~
 [core]
 	filemode = false
 	editor = /usr/bin/vim
