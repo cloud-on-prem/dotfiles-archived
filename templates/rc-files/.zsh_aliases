@@ -22,6 +22,7 @@ alias grb='git branch --merged master | grep -v "\* master" | xargs -n 0 git bra
 alias gti='git'
 alias gset='git push --set-upstream origin `git symbolic-ref --short -q HEAD`'
 alias gpush='git push'
+alias groom='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
 alias bx='bundle exec'
 alias zc='zeus console'
