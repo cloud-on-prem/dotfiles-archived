@@ -8,7 +8,6 @@ dep 'osx' do
 end
 
 dep 'homebrew.pkg'
-dep 'virtualbox.bin'
 
 dep 'brew cask' do
   met? do
