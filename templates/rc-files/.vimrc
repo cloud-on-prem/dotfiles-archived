@@ -289,3 +289,6 @@ au FileType go nnoremap <leader>r :w\|:call VimuxRunCommand("clear && go run " .
 let g:indentLine_color_term = 240
 let g:indentLine_char = '.'
 nnoremap <Leader>ig :IndentLinesToggle<cr>
+
+"Line Numbers
+nnoremap <Leader>ln :set nu!<cr>
