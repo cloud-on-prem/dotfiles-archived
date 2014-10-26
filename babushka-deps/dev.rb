@@ -6,9 +6,11 @@ dep 'dev' do
   requires 'bower'
   requires 'redis-server.managed'
   requires 'weechat.managed'
+  requires 'exuberant-ctags.pkg'
 end
 
 dep 'weechat.managed'
+dep 'exuberant-ctags.pkg'
 
 dep 'vim' do
   requires 'vundle'
