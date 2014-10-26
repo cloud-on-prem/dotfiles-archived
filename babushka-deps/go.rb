@@ -14,7 +14,7 @@ module Babushka
       end
 
       def system_version
-        `go version`
+        `go version` rescue nil
       end
 
       def matches_system_version?
