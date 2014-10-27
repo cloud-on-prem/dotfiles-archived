@@ -275,3 +275,6 @@ nnoremap <Leader>ig :IndentLinesToggle<cr>
 
 "Line Numbers
 nnoremap <Leader>ln :set nu!<cr>
+
+"Get rid of annoying white spaces
+command CleanSpaces :%s/\s\+$//
