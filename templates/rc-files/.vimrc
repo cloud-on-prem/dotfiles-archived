@@ -281,6 +281,10 @@ let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 command! Sc set spell!
 command! Refresh so $MYVIMRC
 
+" Common spelling mistakes
+command! Qa qa
+command! Wq wq
+
 " Go Stuff
 au FileType go nnoremap <leader>b :GoBuild<cr>
 au FileType go nnoremap <leader>r :w\|:call VimuxRunCommand("clear && go run " . fnamemodify(bufname("%"), ":p"))<CR>
