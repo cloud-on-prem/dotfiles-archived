@@ -277,4 +277,4 @@ nnoremap <Leader>ig :IndentLinesToggle<cr>
 nnoremap <Leader>ln :set nu!<cr>
 
 "Get rid of annoying white spaces
-command CleanSpaces :%s/\s\+$//
+command! CleanSpaces :%s/\s\+$//
