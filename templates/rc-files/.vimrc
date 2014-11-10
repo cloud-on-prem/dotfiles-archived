@@ -104,11 +104,11 @@ let g:multi_cursor_skip_key='<C-g>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " Tabs
-map <C-t> :tabnew<CR>
-map <Leader>h gt
-map <Leader>l gT
-map <Leader>T <C-W>T<CR> " Move split into a new Tab
-map <Leader>X :tabclose<CR> " Close current Tab
+nnoremap <C-t> :tabnew<CR>
+nnoremap <Leader>h :tabnext<CR>
+nnoremap <Leader>l :tabprev<CR>
+nnoremap <Leader>T <C-W>T<CR> " Move split into a new Tab
+nnoremap <Leader>X :tabclose<CR> " Close current Tab
 
 " Tag bar
 let g:tagbar_left=1
@@ -274,7 +274,7 @@ let g:indentLine_char = '.'
 nnoremap <Leader>ig :IndentLinesToggle<cr>
 
 "Line Numbers
-nnoremap <Leader>ln :set nu!<cr>
+nnoremap <Leader>nu :set nu!<cr>
 
 "Get rid of annoying white spaces
 command! CleanSpaces :%s/\s\+$//
