@@ -48,7 +48,6 @@ Plugin 'Shougo/neocomplcache.vim'
 Plugin 'bling/vim-airline'
 Plugin 'fatih/vim-go'
 Plugin 'evanmiller/nginx-vim-syntax'
-Plugin 'Yggdroot/indentLine'
 
 call vundle#end()
 filetype plugin indent on
@@ -267,11 +266,6 @@ command! Wq wq
 " Go Stuff
 au FileType go nnoremap <leader>b :GoBuild<cr>
 au FileType go nnoremap <leader>r :w\|:call VimuxRunCommand("clear && go run " . fnamemodify(bufname("%"), ":p"))<CR>
-
-" Indentation Guides
-let g:indentLine_color_term = 240
-let g:indentLine_char = '.'
-nnoremap <Leader>ig :IndentLinesToggle<cr>
 
 "Line Numbers
 nnoremap <Leader>nu :set nu!<cr>
