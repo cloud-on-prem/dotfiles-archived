@@ -66,3 +66,38 @@ export PATH=$PATH:$GOPATH/bin
 if [ -f ~/.zsh_profile ]; then
   . ~/.zsh_profile
 fi
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Fuzzy finder
+fbr() {
+  local branches branch
+  branches=$(git branch) &&
+    branch=$(echo "$branches" | fzf +s +m) &&
+    git checkout $(echo "$branch" | sed "s/.* //")
+}
+
+cdf() {
+  local file
+  local dir
+  file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+}
+
+fe() {
+  local file
+  file=$(fzf --query="$1" --select-1 --exit-0)
+  [ -n "$file" ] && ${EDITOR:-vim} "$file"
+}
+
+fh() {
+  eval $(([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s | sed 's/ *[0-9]* *//')
+}
+
+ftags() {
+  local line
+  [ -e tags ] &&
+    line=$(
+  awk 'BEGIN { FS="\t" } !/^!/ {print toupper($4)"\t"$1"\t"$2"\t"$3}' tags |
+  cut -c1-80 | fzf --nth=1,2
+  ) && $EDITOR $(cut -f3 <<< "$line") -c "set nocst" \
+    -c "silent tag $(cut -f2 <<< "$line")"
+}

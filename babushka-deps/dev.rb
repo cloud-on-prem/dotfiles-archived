@@ -7,6 +7,7 @@ dep 'dev' do
   requires 'redis-server.managed'
   requires 'weechat.managed'
   requires 'exuberant-ctags.pkg'
+  requires 'fzf'
 end
 
 dep 'weechat.managed'
@@ -15,6 +16,18 @@ dep 'exuberant-ctags.pkg'
 dep 'vim' do
   requires 'vundle'
   requires 'vimproc'
+end
+
+dep 'fzf' do
+  met? do
+    file = "~/.fzf/fzf"
+    file.p.exists?
+  end
+
+  meet do
+    shell "git clone https://github.com/junegunn/fzf.git ~/.fzf"
+    shell "~/.fzf/install"
+  end
 end
 
 dep 'vundle' do
