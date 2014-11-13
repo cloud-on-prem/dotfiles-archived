@@ -17,9 +17,39 @@ set ttimeoutlen=10         "wait for 10ms after escape
 set hidden                 "Hide the buffers
 set tags=./tags            "Where to find ctags
 
+set cursorline             " Highlight the current line
+set eol " force blank lines at end of file
+set scrolloff=3
+set encoding=utf-8
+set fileencodings=utf-8
+set t_Co=256               " enable 256-color mode.
+syntax enable              " enable syntax highlighting (previously syntax on).
+set term=screen-256color
 let mapleader = ";" "set the leader key to ';' (easy to type)
+
+" Mouse for scrolling etc in console.
+set mouse=a
+
+" " Resize split panes with mouse within tmux.
+" " Also get live-updated text selection with mouse drag.
+set ttymouse=xterm2
+
+" Some Linux distributions set filetype in /etc/vimrc.
+" Clear filetype flags before changing runtimepath to force Vim to reload them.
+filetype off
+filetype plugin indent off
+set runtimepath+=/usr/local/go/misc/vim
+filetype plugin indent on
+syntax on
+
+" No swp files
+set noswapfile
+
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 " <Ctrl-l> redraws the screen and removes any search highlighting.
+
+set exrc            " enable per-directory .vimrc files
+set secure          " disable unsafe commands in local .vimrc files
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -37,20 +67,15 @@ Plugin 'othree/html5.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mattn/emmet-vim'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'wookiehangover/jshint.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'benmills/vimux'
 Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/syntastic'
-Plugin 'majutsushi/tagbar'
-Plugin 'vim-scripts/ZoomWin'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'bling/vim-airline'
 Plugin 'fatih/vim-go'
-Plugin 'evanmiller/nginx-vim-syntax'
 
 call vundle#end()
-filetype plugin indent on
 
 "Enable Matchit
 runtime macros/matchit.vim
@@ -72,24 +97,9 @@ end
 let g:airline_theme='wombat'
 let g:airline_powerline_fonts = 1
 
-set cursorline " Highlight the current line
-set number
-set ruler
-set eol " force blank lines at end of file
-syntax on
-filetype off
-filetype plugin indent on
-set scrolloff=3
-set encoding=utf-8
-set fileencodings=utf-8
-set t_Co=256               " enable 256-color mode.
-syntax enable              " enable syntax highlighting (previously syntax on).
-set term=screen-256color
-
 if has('gui_running')
   set guifont=Inconsolata:h14:
 endif
-
 
 " Open Nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -126,18 +136,8 @@ hi link coffeeReservedError NONE
 hi link coffeeSemicolonError NONE
 hi link coffeeSpaceError NONE
 
-" No swp files
-set noswapfile
-
 " Set up syntaxes
 au BufRead,BufNewFile *.rabl setf ruby
-
-" Mouse for scrolling etc in console.
-set mouse=a
-
-" " Resize split panes with mouse within tmux.
-" " Also get live-updated text selection with mouse drag.
-set ttymouse=xterm2
 
 map <Leader>V :e $MYVIMRC<CR> " Open Vimrc on a whim
 map <Leader>p :set paste!<CR> " Paste stuff like a boss
@@ -149,14 +149,6 @@ map <Leader>q :q<CR> " Quit a Window
 map <Leader>f :NERDTreeFind<CR> " Show the current file in Nerdtree
 nnoremap <Leader>i ggVG=``
 
-" Some Linux distributions set filetype in /etc/vimrc.
-" Clear filetype flags before changing runtimepath to force Vim to reload them.
-filetype off
-filetype plugin indent off
-set runtimepath+=/usr/local/go/misc/vim
-filetype plugin indent on
-syntax on
-
 "Run Rspec Files
 au FileType ruby nnoremap <leader>r :w\|:call VimuxRunCommand("clear && zeus rspec --format documentation ". bufname("%") . ":" . line("."))<CR>
 
@@ -165,10 +157,6 @@ nnoremap <leader>gb :call VimuxRunCommand("git log -20 --pretty='%h %C(yellow)%a
 
 "Update Ctags
 nnoremap <Leader>ct :!sudo bash ~/.dotfiles/scripts/ctags-auto.sh<CR>
-
-noremap <silent> <C-s> :update<CR>
-vnoremap <silent> <C-s> <esc>:update<CR>
-inoremap <silent> <C-s> <esc>:update<CR>
 
 " Search for selected text, forwards or backwards
 vnoremap <silent> * :<C-U>
@@ -184,12 +172,10 @@ nnoremap <Leader>a :Ag <C-r><C-w>
 " Zoom in and Zoom out Vim windows
 nnoremap <Leader>z :ZoomWin <CR>
 
-set exrc            " enable per-directory .vimrc files
-set secure          " disable unsafe commands in local .vimrc files
 
 " Auto complete
 set omnifunc=syntaxcomplete#Complete
-"
+
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
