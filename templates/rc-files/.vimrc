@@ -25,7 +25,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimproc.vim'
 Plugin 'premjg/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/tComment'
@@ -115,6 +116,12 @@ map <Leader>tg :TagbarOpenAutoClose<CR>
 
 let NERDTreeShowHidden=1
 
+" Disable Arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 " Coffeescript Support
 hi link coffeeReservedError NONE
 hi link coffeeSemicolonError NONE
@@ -159,10 +166,6 @@ nnoremap <leader>gb :call VimuxRunCommand("git log -20 --pretty='%h %C(yellow)%a
 
 "Update Ctags
 nnoremap <Leader>ct :!sudo bash ~/.dotfiles/scripts/ctags-auto.sh<CR>
-
-" Fix Ctrlp root finding problem
-let ctrlp_working_path_mode=''
-
 
 noremap <silent> <C-s> :update<CR>
 vnoremap <silent> <C-s> <esc>:update<CR>
@@ -272,3 +275,21 @@ nnoremap <Leader>nu :set nu!<cr>
 
 "Get rid of annoying white spaces
 command! CleanSpaces :%s/\s\+$//
+
+" Unite
+let g:unite_source_history_yank_enable = 1
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
+nnoremap <C-p> :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
+nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
+nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
+nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
+nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
+
+" Custom mappings for the unite buffer
+autocmd FileType unite call s:unite_settings()
+function! s:unite_settings()
+  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
+  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+endfunction

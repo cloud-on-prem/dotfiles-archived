@@ -14,6 +14,7 @@ dep 'exuberant-ctags.pkg'
 
 dep 'vim' do
   requires 'vundle'
+  requires 'vimproc'
 end
 
 dep 'vundle' do
@@ -26,6 +27,20 @@ dep 'vundle' do
   meet do
     shell "git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
     shell "vim +PluginInstall +qall"
+  end
+end
+
+dep 'vimproc' do
+  met? do
+    cd "~/.vim/bundle/vimproc.vim" do
+      shell "make"
+    end
+  end
+
+  meet do
+    cd "~/.vim/bundle/vimproc.vim" do
+      shell "make"
+    end
   end
 end
 
