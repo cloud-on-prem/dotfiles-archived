@@ -14,8 +14,19 @@ dep 'weechat.managed'
 dep 'exuberant-ctags.pkg'
 
 dep 'vim' do
+  requires 'vim-with-ruby'
   requires 'vundle'
   requires 'vimproc'
+end
+
+dep 'vim-with-ruby' do
+  met? do
+    shell? "vim --version | grep '\+ruby'"
+  end
+
+  meet do
+    shell "sudo apt-get install vim-nox"
+  end
 end
 
 dep 'fzf' do
