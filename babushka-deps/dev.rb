@@ -16,7 +16,7 @@ dep 'exuberant-ctags.pkg'
 dep 'vim' do
   requires 'vim-with-ruby'
   requires 'vundle'
-  requires 'vimproc'
+  requires 'command-t'
 end
 
 dep 'vim-with-ruby' do
@@ -54,15 +54,17 @@ dep 'vundle' do
   end
 end
 
-dep 'vimproc' do
+dep 'command-t' do
   met? do
-    cd "~/.vim/bundle/vimproc.vim" do
+    cd "~/.vim/bundle/command-t/ruby/command-t" do
+      shell "ruby extconf.rb"
       shell "make"
     end
   end
 
   meet do
-    cd "~/.vim/bundle/vimproc.vim" do
+    cd "~/.vim/bundle/command-t/ruby/command-t" do
+      shell "ruby extconf.rb"
       shell "make"
     end
   end
