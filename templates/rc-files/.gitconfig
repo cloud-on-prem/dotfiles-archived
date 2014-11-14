@@ -25,7 +25,7 @@
     unwip = reset HEAD~
 [core]
 	filemode = false
-	editor = /usr/bin/vim
+  editor = vim
 [rerere]
 	enabled = true
 [merge]
