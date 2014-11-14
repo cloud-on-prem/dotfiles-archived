@@ -57,14 +57,14 @@ end
 dep 'command-t' do
   met? do
     cd "~/.vim/bundle/command-t/ruby/command-t" do
-      shell "ruby extconf.rb"
+      shell "/usr/bin/ruby extconf.rb"
       shell "make"
     end
   end
 
   meet do
     cd "~/.vim/bundle/command-t/ruby/command-t" do
-      shell "ruby extconf.rb"
+      shell "/usr/bin/ruby extconf.rb"
       shell "make"
     end
   end
