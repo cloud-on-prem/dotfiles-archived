@@ -14,18 +14,41 @@ dep 'weechat.managed'
 dep 'exuberant-ctags.pkg'
 
 dep 'vim' do
-  requires 'vim-with-ruby'
+  requires 'vim-with-ruby-python'
   requires 'vundle'
   requires 'command-t'
+  requires 'youcompleteme'
 end
 
-dep 'vim-with-ruby' do
+dep 'vim-with-ruby-python' do
   met? do
     shell? "vim --version | grep '\+ruby'"
   end
 
   meet do
-    shell "sudo apt-get install vim-nox"
+    cd "/tmp" do
+      shell "hg clone https://vim.googlecode.com/hg/ vim"
+      cd "vim" do
+        shell "./configure --enable-pythoninterp --enable-rubyinterp"
+        shell "sudo make && sudo make install"
+      end
+    end
+  end
+end
+
+dep 'youcompleteme' do
+  met? do
+    cd "~/.vim/bundle/YouCompleteMe" do
+      shell "git submodule update --init --recursive"
+      shell "./install.sh --clang-completer"
+    end
+  end
+
+  meet do
+    cd "~/.vim/bundle/YouCompleteMe" do
+      shell "git submodule update --init --recursive"
+      shell "./install.sh --clang-completer"
+    end
   end
 end
 
