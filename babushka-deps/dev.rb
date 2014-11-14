@@ -5,9 +5,9 @@ dep 'dev' do
   requires 'ag'
   requires 'bower'
   requires 'redis-server.managed'
-  requires 'weechat.managed'
   requires 'exuberant-ctags.pkg'
   requires 'fzf'
+  requires 'weechat.managed'
 end
 
 dep 'weechat.managed'
