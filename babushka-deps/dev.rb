@@ -14,41 +14,13 @@ dep 'weechat.managed'
 dep 'exuberant-ctags.pkg'
 
 dep 'vim' do
-  requires 'vim-with-ruby-python'
+  requires 'vim-nox.managed'
   requires 'vundle'
-  requires 'command-t'
-  requires 'youcompleteme'
 end
 
-dep 'vim-with-ruby-python' do
+dep 'vim-nox.managed' do
   met? do
-    shell? "vim --version | grep '\+ruby'"
-  end
-
-  meet do
-    cd "/tmp" do
-      shell "hg clone https://vim.googlecode.com/hg/ vim"
-      cd "vim" do
-        shell "./configure --enable-pythoninterp --enable-rubyinterp"
-        shell "sudo make && sudo make install"
-      end
-    end
-  end
-end
-
-dep 'youcompleteme' do
-  met? do
-    cd "~/.vim/bundle/YouCompleteMe" do
-      shell "git submodule update --init --recursive"
-      shell "./install.sh --clang-completer"
-    end
-  end
-
-  meet do
-    cd "~/.vim/bundle/YouCompleteMe" do
-      shell "git submodule update --init --recursive"
-      shell "./install.sh --clang-completer"
-    end
+    shell? "vim --version | grep '+ruby'"
   end
 end
 
@@ -74,22 +46,6 @@ dep 'vundle' do
   meet do
     shell "git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
     shell "vim +PluginInstall +qall"
-  end
-end
-
-dep 'command-t' do
-  met? do
-    cd "~/.vim/bundle/command-t/ruby/command-t" do
-      shell "/usr/bin/ruby extconf.rb"
-      shell "make"
-    end
-  end
-
-  meet do
-    cd "~/.vim/bundle/command-t/ruby/command-t" do
-      shell "/usr/bin/ruby extconf.rb"
-      shell "make"
-    end
   end
 end
 
@@ -140,8 +96,13 @@ dep 'liblzma-dev' do
   meet { shell "apt-get install -y --force-yes liblzma-dev", :sudo => true }
 end
 
+dep 'npm.managed' do
+  met? { shell "npm --version" }
+end
 
 dep "bower" do
+  requires 'npm.managed'
+
   met? do
     shell? "bower --version"
   end
