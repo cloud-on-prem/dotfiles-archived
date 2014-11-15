@@ -58,6 +58,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'premjg/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/tComment'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'rking/ag.vim'
