@@ -4,7 +4,7 @@ dep 'dev' do
   requires 'mercurial.bin'
   requires 'ag'
   requires 'bower'
-  requires 'redis-server.managed'
+  requires 'redis'
   requires 'exuberant-ctags.pkg'
   requires 'fzf'
   requires 'weechat.managed'
@@ -14,13 +14,29 @@ dep 'weechat.managed'
 dep 'exuberant-ctags.pkg'
 
 dep 'vim' do
-  requires 'vim-nox.managed'
+  requires 'vim-with-deps'
   requires 'vundle'
+end
+
+dep 'vim-with-deps' do
+  met? do
+    shell? "vim --version | grep '+ruby'"
+    shell? "vim --version | grep '+lua'"
+  end
+
+  meet do
+    if Babushka::Helpers::Os.osx?
+      shell "brew install vim --with-lua --with-ruby --with-pyhton"
+    else
+      requires "vim-nox.managed"
+    end
+  end
 end
 
 dep 'vim-nox.managed' do
   met? do
     shell? "vim --version | grep '+ruby'"
+    shell? "vim --version | grep '+lua'"
   end
 end
 
@@ -115,4 +131,19 @@ dep "bower" do
   end
 end
 
-dep 'redis-server.managed' do provides [] end
+dep 'redis' do
+  met? do
+    shell? "redis-server --version"
+  end
+
+  meet do
+    if Babushka::Helpers::Os.osx?
+      requires "redis.managed"
+    else
+      requires "redis-server.managed"
+    end
+  end
+end
+
+dep 'redis-server.managed'
+dep 'redis.managed'
