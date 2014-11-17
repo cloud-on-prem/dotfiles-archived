@@ -68,30 +68,31 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Fuzzy finder
-fbr() {
+# git co
+fz_git_co() {
   local branches branch
   branches=$(git branch) &&
     branch=$(echo "$branches" | fzf +s +m) &&
     git checkout $(echo "$branch" | sed "s/.* //")
 }
 
-cdf() {
+fz_cd() {
   local file
   local dir
   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
 }
 
-fe() {
+fz_edit() {
   local file
   file=$(fzf --query="$1" --select-1 --exit-0)
   [ -n "$file" ] && ${EDITOR:-vim} "$file"
 }
 
-fh() {
+fz_history() {
   eval $(([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s | sed 's/ *[0-9]* *//')
 }
 
-ftags() {
+fz_ctags() {
   local line
   [ -e tags ] &&
     line=$(
