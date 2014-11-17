@@ -97,8 +97,11 @@ dep 'liblzma-dev' do
 end
 
 dep 'npm.managed' do
-  met? { shell "npm --version" }
+  requires 'node.managed'
+  met? { shell? "npm --version" }
 end
+
+dep 'node.managed'
 
 dep "bower" do
   requires 'npm.managed'
