@@ -22,6 +22,7 @@ end
 
 dep 'rc-main' do
   requires 'ack.rcfile'
+  requires 'fzf-local.rcfile'
   requires 'gem.rcfile'
   requires 'gitconfig.rcfile'
   requires 'git-completion.rcfile'
@@ -41,6 +42,10 @@ end
 
 dep 'ack.rcfile' do
   file_name '.ackrc'
+end
+
+dep 'fzf-local.rcfile' do
+  file_name '.fzf-local.zsh'
 end
 
 dep 'gem.rcfile' do

@@ -30,9 +30,9 @@ alias fs='foreman start'
 
 alias bab='babushka'
 
-# Fuzzy stuff
-alias fgb="fz_git_co"
+alias fgc="fz_git_co"
 alias fcd="fz_cd"
 alias fe="fz_edit"
 alias fh="fz_history"
 alias fct="fz_ctags"
+alias ff="fz_locate"
