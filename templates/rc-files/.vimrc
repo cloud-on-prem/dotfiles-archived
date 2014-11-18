@@ -227,3 +227,7 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
 "Neocomplete end
+
+" Ultisnips
+let g:UltiSnipsEditSplit = 'vertical'
+command! Snip :UltiSnipsEdit
