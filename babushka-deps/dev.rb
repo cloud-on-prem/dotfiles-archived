@@ -57,6 +57,7 @@ dep 'fzf' do
       shell "sudo apt-get install ncurses-dev"
     end
     shell "~/.fzf/install"
+    end
   end
 end
 
