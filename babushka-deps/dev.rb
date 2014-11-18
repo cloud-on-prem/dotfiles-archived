@@ -10,7 +10,12 @@ dep 'dev' do
   requires 'weechat.managed'
 end
 
-dep 'weechat.managed'
+dep 'weechat.managed' do
+  met? do
+    shell? "weechat-curses"
+  end
+end
+
 dep 'exuberant-ctags.pkg'
 
 dep 'vim' do
@@ -48,6 +53,9 @@ dep 'fzf' do
 
   meet do
     shell "git clone https://github.com/junegunn/fzf.git ~/.fzf"
+    unless Babushka::Helpers::Os.osx? do
+      shell "sudo apt-get install ncurses-dev"
+    end
     shell "~/.fzf/install"
   end
 end
@@ -113,11 +121,24 @@ dep 'liblzma-dev' do
 end
 
 dep 'npm.managed' do
-  requires 'node.managed'
+  requires 'nodejs.managed'
   met? { shell? "npm --version" }
 end
 
-dep 'node.managed'
+dep 'nodejs.managed' do
+  met? do
+    shell? "node --version"
+  end
+
+  meet do
+    if Babushka::Helpers::Os.osx?
+      shell "brew install node"
+    else
+      shell "curl -sL https://deb.nodesource.com/setup | sudo bash -"
+      shell "sudo apt-get install -y nodejs"
+    end
+  end
+end
 
 dep "bower" do
   requires 'npm.managed'
