@@ -168,4 +168,18 @@ dep 'redis' do
 end
 
 dep 'redis-server.managed'
+
 dep 'redis.managed'
+
+dep 'ultisnips-dir' do
+  dest_dir = "~/.vim/UltiSnips"
+  src_dir = "~/.dotfiles/snippets/vim"
+
+  met? do
+    dest_dir.p.readlink == src_dir.p
+  end
+
+  meet do
+    shell "ln -sf #{src_dir} #{dest_dir}"
+  end
+end
