@@ -8,6 +8,7 @@ dep 'dev' do
   requires 'exuberant-ctags.pkg'
   requires 'fzf'
   requires 'weechat.managed'
+  requires 'mlocate.managed' if Babushka::Helpers::Os.linux?
 end
 
 dep 'weechat.managed' do
@@ -181,5 +182,11 @@ dep 'ultisnips-dir' do
 
   meet do
     shell "ln -sf #{src_dir} #{dest_dir}"
+  end
+end
+
+dep 'mlocate.managed' do
+  met? do
+    shell? "locate --version"
   end
 end
