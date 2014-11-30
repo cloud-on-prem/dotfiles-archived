@@ -2,6 +2,8 @@ alias c='clear'
 alias refresh='source ~/.zshrc'
 alias restartnet="sudo nohup sh -c 'invoke-rc.d networking stop; date; echo sleeping; sleep 2; echo waking; date; invoke-rc.d networking start'"
 
+alias lss='ls -lAh'
+
 alias v='vim'
 
 alias vu='vagrant up'
