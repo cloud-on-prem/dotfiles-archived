@@ -89,8 +89,8 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 " Look and Feel
 set background=dark
 if filereadable( expand("$HOME/.vim/bundle/vim-colorschemes/colors/gruvbox.vim") )
-  colorscheme gruvbox
-  " colorscheme molokai
+  " colorscheme gruvbox
+  colorscheme molokai
   " colorscheme solarized
   " colorscheme vividchalk
 end
