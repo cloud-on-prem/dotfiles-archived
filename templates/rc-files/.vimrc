@@ -75,6 +75,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'fatih/vim-go'
+Plugin 'AndrewRadev/splitjoin.vim'
 
 call vundle#end()
 
