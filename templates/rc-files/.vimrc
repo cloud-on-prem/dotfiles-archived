@@ -76,6 +76,7 @@ Plugin 'bling/vim-airline'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'fatih/vim-go'
 Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'Raimondi/delimitMate'
 
 call vundle#end()
 
@@ -206,6 +207,7 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
+set completeopt-=preview " don't open a scratch window when auto completing
 
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 
