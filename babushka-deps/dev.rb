@@ -7,7 +7,6 @@ dep 'dev' do
   requires 'redis'
   requires 'exuberant-ctags.pkg'
   requires 'fzf'
-  requires 'weechat.managed'
   requires 'mlocate.managed' if Babushka::Helpers::Os.linux?
 end
 
