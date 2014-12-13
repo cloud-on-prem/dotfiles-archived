@@ -77,6 +77,7 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'fatih/vim-go'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'Raimondi/delimitMate'
+Plugin 'chrisbra/unicode.vim'
 
 call vundle#end()
 
@@ -230,3 +231,4 @@ endif
 " Ultisnips
 let g:UltiSnipsEditSplit = 'vertical'
 command! Snip :UltiSnipsEdit
+let g:Unicode_ShowPreviewWindow = 1
