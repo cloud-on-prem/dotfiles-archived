@@ -150,8 +150,17 @@ map <Leader>q :q<CR> " Quit a Window
 map <Leader>f :NERDTreeFind<CR> " Show the current file in Nerdtree
 nnoremap <Leader>i ggVG=``
 
-"Run Rspec Files
-au FileType ruby nnoremap <leader>r :w\|:call VimuxRunCommand("clear && zeus rspec --format documentation ". bufname("%") . ":" . line("."))<CR>
+"Run specs like a boss
+let g:specType = "rspec"
+au FileType ruby call SetUpRubySpecs()
+
+function! SetUpRubySpecs()
+  if g:specType == "rspec"
+    nnoremap <leader>r :w\|:call VimuxRunCommand("clear && zeus rspec --format documentation ". bufname("%") . ":" . line("."))<CR>
+  elseif g:specType == "minitest"
+    nnoremap <leader>r :w\|:call VimuxRunCommand("clear && ruby -Ilib:test ". bufname("%"))<CR>
+  endif
+endfunction
 
 "Git Blame
 nnoremap <leader>gb :call VimuxRunCommand("git log -20 --pretty='%h %C(yellow)%an %Creset %cr: %s ' " . bufname("%") )<CR>
