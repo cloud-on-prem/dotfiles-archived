@@ -78,6 +78,7 @@ Plugin 'fatih/vim-go'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'chrisbra/unicode.vim'
+Plugin 'Lokaltog/vim-easymotion'
 
 call vundle#end()
 
@@ -241,3 +242,16 @@ endif
 let g:UltiSnipsEditSplit = 'vertical'
 command! Snip :UltiSnipsEdit
 let g:Unicode_ShowPreviewWindow = 1
+
+
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Easymotion
+nmap s <Plug>(easymotion-sn)
+"
+" " Turn on case sensitive feature
+let g:EasyMotion_smartcase = 1
+"
+" " JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)"
