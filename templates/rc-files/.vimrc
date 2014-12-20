@@ -79,6 +79,7 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'chrisbra/unicode.vim'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-surround.git'
 
 call vundle#end()
 
