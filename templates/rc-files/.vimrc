@@ -95,6 +95,7 @@ if filereadable( expand("$HOME/.vim/bundle/vim-colorschemes/colors/gruvbox.vim")
   " colorscheme solarized
   " colorscheme vividchalk
 end
+hi Normal ctermfg=252 ctermbg=none
 
 " Airline conf
 let g:airline_theme='wombat'
