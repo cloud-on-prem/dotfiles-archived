@@ -105,6 +105,8 @@ dep 'silversearcher-ag-src' do
     libpcre3-dev.managed
     zlib1g-dev.managed
     liblzma-dev
+    autotools-dev.managed
+    automake.managed
   ]
 
   met? do
@@ -123,6 +125,9 @@ end
 
 dep 'libpcre3-dev.managed' do provides [] end
 dep 'zlib1g-dev.managed'   do provides [] end
+dep 'autotools-dev.managed'   do provides [] end
+dep 'automake.managed'   do provides [] end
+
 dep 'liblzma-dev' do
   met? { shell? "dpkg -s liblzma-dev" }
   meet { shell "apt-get install -y --force-yes liblzma-dev", :sudo => true }
@@ -160,23 +165,36 @@ dep "bower" do
   end
 end
 
-dep 'redis' do
+dep "redis" do
+  if Babushka::Helpers::Os.osx?
+    requires "redis.managed"
+  else
+    requires "redis-server-manual"
+  end
+
+  met? do
+    shell? "redis-server --version"
+  end
+end
+
+dep "redis-server-manual" do
   met? do
     shell? "redis-server --version"
   end
 
   meet do
-    if Babushka::Helpers::Os.osx?
-      requires "redis.managed"
-    else
-      requires "redis-server.managed"
+    cd "/tmp/" do
+      shell "wget http://download.redis.io/redis-stable.tar.gz"
+      shell "tar xvzf redis-stable.tar.gz"
+      cd "redis-stable" do
+        shell "make"
+        shell "sudo make install"
+      end
     end
   end
 end
 
-dep 'redis-server.managed'
-
-dep 'redis.managed'
+dep "redis.managed"
 
 dep 'ultisnips-dir' do
   dest_dir = "~/.vim/UltiSnips"
