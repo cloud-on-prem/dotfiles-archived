@@ -1,4 +1,5 @@
 dep 'dev' do
+  requires 'locale'
   requires 'vim'
   requires 'tree.bin'
   requires 'mercurial.bin'
@@ -8,6 +9,12 @@ dep 'dev' do
   requires 'exuberant-ctags.pkg'
   requires 'fzf'
   requires 'mlocate.managed' if Babushka::Helpers::Os.linux?
+end
+
+dep 'locale' do
+  met? do
+    shell "sudo locale-gen en_AU.UTF-8"
+  end
 end
 
 dep 'weechat.managed' do
