@@ -1,0 +1,23 @@
+# ~/.tmuxinator/devcraft-tv.yml
+
+name: devcraft-tv
+root: ~/projects/go/src/github.com/devcraft-tv/
+
+windows:
+  - Episode:
+      layout: ee6e,136x32,0,0[136x25,0,0,0,136x6,0,26,2]
+      panes:
+        - Vim:
+          - vim
+        - server:
+          - sleep 2
+          - clear
+  - Playground:
+      layout: 9d73,136x32,0,0[136x26,0,0,1,136x5,0,27,3]
+      panes:
+        - Vim:
+          - cd ~/projects/go/src/github.com/devcraft-tv/playground
+          - vim
+        - server:
+          - cd ~/projects/go/src/github.com/devcraft-tv/playground
+          - clear
