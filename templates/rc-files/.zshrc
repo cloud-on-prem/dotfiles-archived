@@ -67,5 +67,10 @@ if [ -f ~/.zsh_profile ]; then
 fi
 
 # Fuzzy finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f ~/.fzf-local.zsh ] && source ~/.fzf-local.zsh
+if [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+fi
+
+if [ -f ~/.fzf-local.zsh ]; then
+  source ~/.fzf-local.zsh
+fi
