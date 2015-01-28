@@ -19,7 +19,7 @@
     co = checkout
     ci = commit -v
     ad = add -p
-    p = push
+    p = push --follow-tags
     oops = reset --soft HEAD^1
     wip = !git add -A && git commit -m "WIP"
     unwip = reset HEAD~
