@@ -74,3 +74,9 @@ fi
 if [ -f ~/.fzf-local.zsh ]; then
   source ~/.fzf-local.zsh
 fi
+
+# Extra configs
+
+if [ -f ~/.zshrc.local ]; then
+  . ~/.zshrc.local
+fi
