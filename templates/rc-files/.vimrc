@@ -148,7 +148,6 @@ map <Leader>p :set paste!<CR> " Paste stuff like a boss
 nnoremap "p :reg<CR> " Show me the clipboard registry already!
 map <Leader>\ :vsp<CR> " Open a split window on the right
 map <Leader>- :sp<CR> " Open a split window bottom
-map <Leader>w <C-w>w " Cycle between windows
 map <Leader>q :q<CR> " Quit a Window
 map <Leader>f :NERDTreeFind<CR> " Show the current file in Nerdtree
 nnoremap <Leader>i ggVG=``
@@ -257,3 +256,5 @@ let g:EasyMotion_smartcase = 1
 " " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)"
+
+nnoremap <Leader>w :set nowrap!<cr>
