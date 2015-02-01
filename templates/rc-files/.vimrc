@@ -80,6 +80,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'chrisbra/unicode.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-surround.git'
+Plugin 'neilagabriel/vim-geeknote'
 
 call vundle#end()
 
