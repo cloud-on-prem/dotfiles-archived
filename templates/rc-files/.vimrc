@@ -102,7 +102,7 @@ let g:airline_theme='wombat'
 let g:airline_powerline_fonts = 1
 
 if has('gui_running')
-  set guifont=Inconsolata:h14:
+  set guifont=Sauce_Code_Powerline_Light:h20
 endif
 
 " Open Nerdtree
@@ -144,13 +144,14 @@ hi link coffeeSpaceError NONE
 au BufRead,BufNewFile *.rabl setf ruby
 
 map <Leader>V :e $MYVIMRC<CR> " Open Vimrc on a whim
-map <Leader>p :set paste!<CR> " Paste stuff like a boss
+map <Leader>p :set paste!<CR> " Paste stuff like a bos
 nnoremap "p :reg<CR> " Show me the clipboard registry already!
 map <Leader>\ :vsp<CR> " Open a split window on the right
 map <Leader>- :sp<CR> " Open a split window bottom
 map <Leader>q :q<CR> " Quit a Window
 map <Leader>f :NERDTreeFind<CR> " Show the current file in Nerdtree
 nnoremap <Leader>i ggVG=``
+au BufNewFile,BufRead *.md set filetype=markdown
 
 "Run specs like a boss
 let g:specType = "rspec"
