@@ -48,3 +48,18 @@ dep 'vagrant' do
     shell "brew cask install vagrant"
   end
 end
+
+dep 'geeknote' do
+  met? do
+    shell? "geeknote -v"
+  end
+
+  meet do
+    cd "/tmp" do
+      shell "git clone git://github.com/VitaliyRodnenko/geeknote.git"
+      cd "geeknote" do
+        shell "sudo python setup.py install"
+      end
+    end
+  end
+end
