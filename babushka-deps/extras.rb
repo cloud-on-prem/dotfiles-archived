@@ -3,3 +3,5 @@ dep 'postgresql.bin' do
     shell? "postgres --version"
   end
 end
+
+dep 'phantomjs.managed'   do provides [] end
