@@ -81,6 +81,7 @@ Plugin 'chrisbra/unicode.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-surround.git'
 Plugin 'neilagabriel/vim-geeknote'
+Plugin 'elzr/vim-json'
 
 call vundle#end()
 
@@ -143,6 +144,7 @@ hi link coffeeSpaceError NONE
 
 " Set up syntaxes
 au BufRead,BufNewFile *.rabl setf ruby
+au BufRead,BufNewFile *.json setf json
 
 map <Leader>V :e $MYVIMRC<CR> " Open Vimrc on a whim
 map <Leader>p :set paste!<CR> " Paste stuff like a bos
