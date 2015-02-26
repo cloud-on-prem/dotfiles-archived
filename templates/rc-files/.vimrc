@@ -55,6 +55,8 @@ set secure          " disable unsafe commands in local .vimrc files
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+runtime macros/matchit.vim
+
 Plugin 'gmarik/Vundle.vim'
 Plugin 'premjg/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
@@ -84,6 +86,8 @@ Plugin 'neilagabriel/vim-geeknote'
 Plugin 'elzr/vim-json'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 
 call vundle#end()
 
