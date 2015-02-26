@@ -83,6 +83,7 @@ Plugin 'tpope/vim-surround.git'
 Plugin 'neilagabriel/vim-geeknote'
 Plugin 'elzr/vim-json'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'derekwyatt/vim-scala'
 
 call vundle#end()
 
