@@ -91,6 +91,10 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 
 call vundle#end()
 
+" Set up syntaxes
+au BufRead,BufNewFile *.rabl setf ruby
+au BufRead,BufNewFile *.json setf json
+
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
@@ -147,10 +151,6 @@ noremap <Right> <NOP>
 hi link coffeeReservedError NONE
 hi link coffeeSemicolonError NONE
 hi link coffeeSpaceError NONE
-
-" Set up syntaxes
-au BufRead,BufNewFile *.rabl setf ruby
-au BufRead,BufNewFile *.json setf json
 
 map <Leader>V :e $MYVIMRC<CR> " Open Vimrc on a whim
 map <Leader>p :set paste!<CR> " Paste stuff like a bos
