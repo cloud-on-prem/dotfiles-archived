@@ -175,7 +175,7 @@ function! SetUpRubySpecs()
 endfunction
 
 "Git Blame
-nnoremap <leader>gb :call VimuxRunCommand("git log -20 --pretty='%h %C(yellow)%an %Creset %cr: %s ' " . bufname("%") )<CR>
+nnoremap <leader>gb :gblame<CR>
 
 "Update Ctags
 nnoremap <Leader>ct :!sudo bash ~/.dotfiles/scripts/ctags-auto.sh<CR>
@@ -191,12 +191,13 @@ vnoremap <silent> * :<C-U>
 " Quick Ack Word
 nnoremap <Leader>a :Ag <C-r><C-w>
 
-command! Sc set spell!
+command! Spell set spell!
 command! Refresh so $MYVIMRC
 
 " Common spelling mistakes
 command! Qa qa
 command! Wq wq
+command! W w
 
 " Go Stuff
 au FileType go nnoremap <leader>b :GoBuild<cr>
@@ -209,6 +210,8 @@ nnoremap <Leader>nu :set nu!<cr>
 command! CleanSpaces :%s/\s\+$//
 
 set rtp+=~/.fzf
+
+let g:ctrlp_show_hidden = 1
 
 
 "Neocomplete
@@ -237,10 +240,12 @@ function! s:my_cr_function()
   return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
 
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
 inoremap <expr><C-e>  neocomplete#cancel_popup()
+
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
