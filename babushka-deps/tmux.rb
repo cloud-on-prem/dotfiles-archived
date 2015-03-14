@@ -2,6 +2,7 @@ dep 'tmux-main' do
   requires 'tmux.lib'
   requires 'tmuxinator.gem'
   requires 'tmuxinator-templates'
+  requires 'tpm'
   requires 'battery-status'
 end
 
@@ -25,6 +26,16 @@ dep 'tmuxinator-templates' do
 
   meet do
     shell "ln -sfn #{real_file} #{sym_file}"
+  end
+end
+
+dep 'tpm' do
+  met? do
+    "~/.tmux/plugins/tpm/tpm".p.exists?
+  end
+
+  meet do
+    shell "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
   end
 end
 

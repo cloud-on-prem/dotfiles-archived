@@ -88,6 +88,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'Keithbsmiley/tmux.vim'
 
 call vundle#end()
 
