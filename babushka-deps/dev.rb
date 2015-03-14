@@ -13,13 +13,11 @@ end
 
 dep 'locale' do
   met? do
-    shell "sudo locale-gen en_AU.UTF-8"
-  end
-end
-
-dep 'weechat.managed' do
-  met? do
-    shell? "weechat-curses"
+    if Babushka::Helpers::Os.linux?
+      shell "sudo locale-gen en_AU.UTF-8"
+    else
+      true
+    end
   end
 end
 
@@ -171,10 +169,6 @@ dep "redis" do
   else
     requires "redis-server-manual"
   end
-
-  met? do
-    shell? "redis-server --version"
-  end
 end
 
 dep "redis-server-manual" do
@@ -194,7 +188,11 @@ dep "redis-server-manual" do
   end
 end
 
-dep "redis.managed"
+dep "redis.managed" do
+  met? do
+    shell? "redis-server --version"
+  end
+end
 
 dep 'ultisnips-dir' do
   dest_dir = "~/.vim/UltiSnips"
