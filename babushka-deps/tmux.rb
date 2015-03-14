@@ -35,7 +35,7 @@ dep 'tpm' do
   end
 
   meet do
-    shell "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
+    shell "git clone git@github.com:tmux-plugins/tpm.git ~/.tmux/plugins/tpm"
   end
 end
 
