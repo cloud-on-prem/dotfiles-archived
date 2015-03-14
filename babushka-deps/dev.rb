@@ -9,6 +9,7 @@ dep 'dev' do
   requires 'exuberant-ctags.pkg'
   requires 'fzf'
   requires 'mlocate.managed' if Babushka::Helpers::Os.linux?
+  requires 'docker-main'
 end
 
 dep 'locale' do
