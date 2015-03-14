@@ -18,6 +18,7 @@
     human = name-rev --name-only --refs=refs/heads/*
     co = checkout
     ci = commit -v
+    cia = commit -v --amend
     ad = add -p
     p = push --follow-tags
     oops = reset --soft HEAD^1
