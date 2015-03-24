@@ -10,6 +10,7 @@ dep 'dev' do
   requires 'fzf'
   requires 'mlocate.managed' if Babushka::Helpers::Os.linux?
   requires 'docker-main'
+  requires 'jq.bin'
 end
 
 dep 'locale' do
@@ -213,3 +214,5 @@ dep 'mlocate.managed' do
     shell? "locate --version"
   end
 end
+
+dep 'jq.bin'
