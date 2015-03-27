@@ -11,6 +11,7 @@ dep 'dev' do
   requires 'mlocate.managed' if Babushka::Helpers::Os.linux?
   requires 'docker-main'
   requires 'jq.bin'
+  requires 'ruby-main'
 end
 
 dep 'locale' do

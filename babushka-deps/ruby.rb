@@ -37,7 +37,7 @@ dep 'ruby-install' do
 end
 
 dep 'ruby-switch' do
-  requires 'ruby-build'
+  requires 'ruby-install'
 
   met? do
     shell "rbenv rehash"
