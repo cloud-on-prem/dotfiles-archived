@@ -93,8 +93,9 @@ Plugin 'Keithbsmiley/tmux.vim'
 call vundle#end()
 
 " Set up syntaxes
-au BufRead,BufNewFile *.rabl setf ruby
-au BufRead,BufNewFile *.json setf json
+au BufRead,BufNewFile *.rabl set filetype=ruby
+au BufRead,BufNewFile *.json set filetype=json
+au BufRead,BufNewFile *.md set filetype=markdown
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
@@ -161,7 +162,6 @@ map <Leader>- :sp<CR> " Open a split window bottom
 map <Leader>q :q<CR> " Quit a Window
 map <Leader>f :NERDTreeFind<CR> " Show the current file in Nerdtree
 nnoremap <Leader>i ggVG=``
-au BufNewFile,BufRead *.md set filetype=markdown
 
 "Run specs like a boss
 let g:specType = "rspec"
@@ -227,7 +227,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
       \ 'scheme' : $HOME.'/.gosh_completions'
       \ }
 if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
+  let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
