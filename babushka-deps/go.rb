@@ -3,7 +3,7 @@ require_relative "helpers"
 module Babushka
   class Go
     class << self
-      VERSION = "1.3"
+      VERSION = "1.4.2"
 
       def version
         VERSION
@@ -27,14 +27,14 @@ end
 
 dep 'go-main' do
   if Babushka::Helpers::Os.osx?
-    requires 'golang.bin'
+    requires 'go.bin'
   else
     requires 'golang.bin.linux'
   end
   requires 'go-path'
 end
 
-dep 'golang.bin' do
+dep 'go.bin' do
   met? { Babushka::Go.matches_system_version? }
 end
 
