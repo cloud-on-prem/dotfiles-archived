@@ -53,44 +53,9 @@ set exrc            " enable per-directory .vimrc files
 set secure          " disable unsafe commands in local .vimrc files
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call vundle#rc()
 
-runtime macros/matchit.vim
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'premjg/vim-colorschemes'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'vim-scripts/tComment'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'rking/ag.vim'
-Plugin 'tpope/vim-rails'
-Plugin 'othree/html5.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'mattn/emmet-vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-fugitive'
-Plugin 'benmills/vimux'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'scrooloose/syntastic'
-Plugin 'bling/vim-airline'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'fatih/vim-go'
-Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'chrisbra/unicode.vim'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'tpope/vim-surround.git'
-Plugin 'neilagabriel/vim-geeknote'
-Plugin 'elzr/vim-json'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'Keithbsmiley/tmux.vim'
-
-call vundle#end()
+source ~/.vim.bundle
 
 " Set up syntaxes
 au BufRead,BufNewFile *.rabl set filetype=ruby
