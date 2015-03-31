@@ -241,7 +241,8 @@ map <Leader>k <Plug>(easymotion-k)"
 nnoremap <Leader>w :set nowrap!<cr>
 
 " ------- Folding
-set foldlevelstart=0
+set foldmethod=syntax
+set foldlevelstart=10
 nnoremap <Space> za
 vnoremap <Space> za
 "
