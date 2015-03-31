@@ -81,7 +81,7 @@ let g:airline_theme='wombat'
 let g:airline_powerline_fonts = 1
 
 if has('gui_running')
-  set guifont=Sauce_Code_Powerline_Light:h20
+  set guifont=Sauce\ Code\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 endif
 
 " Open Nerdtree
