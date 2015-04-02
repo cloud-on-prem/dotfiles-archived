@@ -59,6 +59,7 @@ source ~/.vim.bundle
 " Set up syntaxes
 au BufRead,BufNewFile *.rabl set filetype=ruby
 au BufRead,BufNewFile *.json set filetype=json
+au BufRead,BufNewFile *.json set conceallevel=0
 au BufRead,BufNewFile *.md set filetype=markdown
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
