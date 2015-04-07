@@ -56,6 +56,7 @@ call vundle#rc()
 source ~/.vim.bundle
 
 " Set up syntaxes
+let g:syntastic_check_on_open=1
 au BufRead,BufNewFile *.rabl set filetype=ruby
 au BufRead,BufNewFile *.json set filetype=json
 au BufRead,BufNewFile *.json set conceallevel=0
