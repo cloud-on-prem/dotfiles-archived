@@ -40,6 +40,8 @@ dep 'tpm' do
 end
 
 dep 'battery-status' do
+  requires 'upower.bin' unless Babushka::Helpers::Os.osx?
+
   met? do
     shell?("/usr/bin/battery")
   end
@@ -49,3 +51,5 @@ dep 'battery-status' do
     `sudo chmod +x /usr/bin/battery`
   end
 end
+
+dep 'upower.bin'
