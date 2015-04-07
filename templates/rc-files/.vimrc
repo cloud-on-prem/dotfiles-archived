@@ -16,6 +16,7 @@ set ttimeoutlen=10         "wait for 10ms after escape
 set hidden                 "Hide the buffers
 set tags=./tags            "Where to find ctags
 set backspace=indent,eol,start
+set autoread
 
 set cursorline             " Highlight the current line
 set eol " force blank lines at end of file
