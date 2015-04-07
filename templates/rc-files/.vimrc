@@ -5,11 +5,6 @@ set incsearch              " But do highlight as you type your search.
 set ignorecase             " Make searches case-insensitive.
 set ruler                  " Always show info along bottom.
 set autoindent             " auto-indent
-set tabstop=2              " tab spacing
-set softtabstop=2          " unify
-set shiftwidth=2           " indent/outdent by 4 columns
-set shiftround             " always indent/outdent to the nearest tabstop
-set expandtab              " use spaces instead of tabs
 set nowrap                 " don't wrap text
 set nu
 set ttimeoutlen=10         "wait for 10ms after escape
@@ -17,14 +12,13 @@ set hidden                 "Hide the buffers
 set tags=./tags            "Where to find ctags
 set backspace=indent,eol,start
 set autoread
-
+set noswapfile " No swp files
 set cursorline             " Highlight the current line
 set eol " force blank lines at end of file
 set scrolloff=3
 set encoding=utf-8
 set fileencodings=utf-8
 set t_Co=256               " enable 256-color mode.
-syntax enable              " enable syntax highlighting (previously syntax on).
 set term=screen-256color
 let mapleader = ";" "set the leader key to ';' (easy to type)
 
@@ -35,16 +29,20 @@ set mouse=a
 " " Also get live-updated text selection with mouse drag.
 set ttymouse=xterm2
 
+" Deal with Tabs
+set tabstop=2
+set shiftwidth=2
+set shiftround
+set expandtab
+
 " Some Linux distributions set filetype in /etc/vimrc.
 " Clear filetype flags before changing runtimepath to force Vim to reload them.
+syntax enable
 filetype off
 filetype plugin indent off
 set runtimepath+=/usr/local/go/misc/vim
 filetype plugin indent on
 syntax on
-
-" No swp files
-set noswapfile
 
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 " <Ctrl-l> redraws the screen and removes any search highlighting.
@@ -180,7 +178,6 @@ set rtp+=~/.fzf
 
 let g:ctrlp_show_hidden = 1
 
-
 "Neocomplete
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
@@ -201,12 +198,12 @@ inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
 set completeopt-=preview " don't open a scratch window when auto completing
 
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-
 function! s:my_cr_function()
   return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
 
+inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 inoremap <expr><C-j>  pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr><C-k>  pumvisible() ? "\<C-p>" : "\<C-k>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
@@ -227,19 +224,6 @@ let g:UltiSnipsEditSplit = 'vertical'
 command! Snip :UltiSnipsEdit
 let g:Unicode_ShowPreviewWindow = 1
 
-
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-
-" Easymotion
-nmap s <Plug>(easymotion-sn)
-"
-" " Turn on case sensitive feature
-let g:EasyMotion_smartcase = 1
-"
-" " JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)"
-
 nnoremap <Leader>w :set nowrap!<cr>
 
 " ------- Folding
@@ -247,4 +231,3 @@ set foldmethod=syntax
 set foldlevelstart=10
 nnoremap <Space> za
 vnoremap <Space> za
-"
