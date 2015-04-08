@@ -12,6 +12,7 @@ dep 'dev' do
   requires 'docker-main'
   requires 'jq.bin'
   requires 'ruby-main'
+  requires 'system-monitoring'
 end
 
 dep 'locale' do
