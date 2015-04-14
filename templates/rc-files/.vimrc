@@ -120,6 +120,7 @@ hi link coffeeSemicolonError NONE
 hi link coffeeSpaceError NONE
 
 map <Leader>V :e $MYVIMRC<CR> " Open Vimrc on a whim
+nnoremap K i<CR><Esc> " Break lines with ease
 map <Leader>p :set paste!<CR> " Paste stuff like a bos
 nnoremap "p :reg<CR> " Show me the clipboard registry already!
 map <Leader>\ :vsp<CR> " Open a split window on the right
