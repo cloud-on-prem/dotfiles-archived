@@ -60,7 +60,7 @@ dep 'fzf' do
   end
 
   meet do
-    shell "git clone https://github.com/junegunn/fzf.git ~/.fzf"
+    shell "git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf"
     unless Babushka::Helpers::Os.osx? do
       shell "sudo apt-get install ncurses-dev"
     end
