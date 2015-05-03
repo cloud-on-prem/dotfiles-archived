@@ -1,50 +1,71 @@
 dep 'ruby-main' do
-  requires 'ruby-switch'
+  requires 'chruby'
+  requires 'ruby-install'
+  requires 'latest-ruby'
 end
 
-dep 'rbenv' do
+dep 'chruby' do
+  def chruby_version
+    "0.3.9"
+  end
+
   met? do
-    shell? "rbenv"
+    "/usr/local/share/chruby/chruby.sh".p.exists?
   end
 
   meet do
-    shell "git clone https://github.com/sstephenson/rbenv.git ~/.rbenv"
-  end
-end
+    cd "/tmp/" do
+      shell "wget -O chruby-#{chruby_version}.tar.gz\
+        https://github.com/postmodern/chruby/archive/v#{chruby_version}.tar.gz"
 
-dep 'ruby-build' do
-  requires 'rbenv'
+      shell "tar -xzvf chruby-#{chruby_version}.tar.gz"
 
-  met? do
-    shell? "rbenv install -l"
-  end
-
-  meet do
-    shell "git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build"
+      cd "chruby-#{chruby_version}/" do
+        shell "sudo make install"
+        shell "sudo ./scripts/setup.sh"
+      end
+    end
   end
 end
 
 dep 'ruby-install' do
-  requires 'ruby-build'
+  def ruby_install_version
+    "0.5.0"
+  end
 
   met? do
-    /2\.1\.2/.match(`rbenv versions`)
+    shell?("ruby-install")
   end
 
   meet do
-    shell "source ~/.zshrc && rbenv install 2.1.2"
+    cd "/tmp/" do
+      shell "wget -O ruby-install-#{ruby_install_version}.tar.gz \
+        https://github.com/postmodern/ruby-install/archive/v#{ruby_install_version}.tar.gz"
+
+      shell "tar -xzvf ruby-install-#{ruby_install_version}.tar.gz"
+
+      cd "ruby-install-#{ruby_install_version}/" do
+        shell "sudo make install"
+      end
+    end
   end
 end
 
-dep 'ruby-switch' do
-  requires 'ruby-install'
+dep 'latest-ruby' do
+  def latest_ruby_version
+    "2.2.3"
+  end
+
+  def latest_ruby_version_regex
+    Regexp.new(latest_ruby_version)
+  end
 
   met? do
-    shell "rbenv rehash"
-    /ruby(.?)(2\.1\.2)/.match(`ruby -v`)
+     latest_ruby_version_regex.match(`chruby-exec -- ruby-install | grep #{latest_ruby_version}`)
   end
 
   meet do
-    shell "rbenv global 2.1.2"
+    `chruby-exec -- ruby-install #{latest_ruby_version}`
   end
 end
+
