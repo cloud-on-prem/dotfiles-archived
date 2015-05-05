@@ -52,6 +52,7 @@ set secure          " disable unsafe commands in local .vimrc files
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
+runtime macros/matchit.vim
 
 source ~/.vim.bundle
 

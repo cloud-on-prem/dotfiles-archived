@@ -1,6 +1,6 @@
 dep 'dev' do
   requires 'locale'
-  requires 'vim'
+  requires 'nvim'
   requires 'tree.bin'
   requires 'mercurial.bin'
   requires 'ag'
@@ -26,30 +26,32 @@ end
 
 dep 'exuberant-ctags.pkg'
 
-dep 'vim' do
-  requires 'vim-with-deps'
-  requires 'vundle'
-end
+dep 'nvim' do
+  if Babushka::Helpers::Os.osx?
+    requires 'nvim-brew'
+  end
 
-dep 'vim-with-deps' do
   met? do
-    shell? "vim --version | grep '+ruby'"
-    shell? "vim --version | grep '+lua'"
+    shell? "nvim --version"
   end
 
   meet do
-    if Babushka::Helpers::Os.osx?
-      shell "brew install vim --with-lua --with-ruby --with-pyhton"
-    else
-      requires "vim-nox.managed"
+    unless Babushka::Helpers::Os.osx?
+      shell "sudo add-apt-repository ppa:neovim-ppa/unstable"
+      shell "sudo apt-get update"
+      shell "sudo apt-get install neovim"
     end
   end
 end
 
-dep 'vim-nox.managed' do
+dep 'nvim-brew' do
   met? do
-    shell? "vim --version | grep '+ruby'"
-    shell? "vim --version | grep '+lua'"
+    shell? "nvim --version"
+  end
+
+  meet do
+    shell "brew tap neovim/homebrew-neovim"
+    shell "brew install --HEAD neovim"
   end
 end
 

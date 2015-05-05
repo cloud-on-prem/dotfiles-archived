@@ -30,6 +30,7 @@ dep 'rc-main' do
   requires 'tmux.rcfile'
   requires 'top.rcfile'
   requires 'vim.rcfile'
+  requires 'nvim.rcfile'
   requires 'vim-bundle.rcfile'
   requires 'zprezto.rcfile'
   requires 'zshrc.rcfile'
@@ -75,6 +76,10 @@ end
 
 dep 'top.rcfile' do
   file_name '.toprc'
+end
+
+dep 'nvim.rcfile' do
+  file_name '.nvimrc'
 end
 
 dep 'vim.rcfile' do
