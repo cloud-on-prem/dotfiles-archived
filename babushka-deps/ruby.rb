@@ -53,7 +53,7 @@ end
 
 dep 'latest-ruby' do
   def latest_ruby_version
-    "2.2.3"
+    "2.2.2"
   end
 
   def latest_ruby_version_regex
@@ -65,7 +65,7 @@ dep 'latest-ruby' do
   end
 
   meet do
-    `chruby-exec -- ruby-install #{latest_ruby_version}`
+    `chruby-exec -- ruby-install ruby #{latest_ruby_version}`
   end
 end
 

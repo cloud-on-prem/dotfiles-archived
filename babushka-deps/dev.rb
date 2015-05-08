@@ -105,6 +105,9 @@ end
 
 dep 'silversearcher-ag-src' do
   requires %w[
+    libffi-dev.managed
+    libglib2.0-dev.managed
+    pkg-config.managed
     libpcre3-dev.managed
     zlib1g-dev.managed
     liblzma-dev
@@ -126,6 +129,9 @@ dep 'silversearcher-ag-src' do
   }
 end
 
+dep 'libffi-dev.managed' do provides [] end
+dep 'libglib2.0-dev.managed' do provides [] end
+dep 'pkg-config.managed' do provides [] end
 dep 'libpcre3-dev.managed' do provides [] end
 dep 'zlib1g-dev.managed'   do provides [] end
 dep 'autotools-dev.managed'   do provides [] end
