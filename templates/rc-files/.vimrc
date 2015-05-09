@@ -22,6 +22,10 @@ set t_Co=256               " enable 256-color mode.
 set term=screen-256color
 let mapleader = ";" "set the leader key to ';' (easy to type)
 
+if &shell =~# 'fish$'
+  set shell=sh
+endif
+
 " Mouse for scrolling etc in console.
 set mouse=a
 
@@ -62,6 +66,8 @@ au BufRead,BufNewFile *.rabl set filetype=ruby
 au BufRead,BufNewFile *.json set filetype=json
 au BufRead,BufNewFile *.json set conceallevel=0
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.bundle set filetype=vim
+au BufRead,BufNewFile *.fish set filetype=fish
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1

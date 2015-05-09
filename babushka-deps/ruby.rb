@@ -5,6 +5,8 @@ dep 'ruby-main' do
 end
 
 dep 'chruby' do
+  requires 'chruby-fish'
+
   def chruby_version
     "0.3.9"
   end
@@ -66,6 +68,22 @@ dep 'latest-ruby' do
 
   meet do
     `chruby-exec -- ruby-install ruby #{latest_ruby_version}`
+  end
+end
+
+dep 'chruby-fish' do
+  met? do
+    "/usr/local/share/chruby/chruby.fish".p.exists?
+  end
+
+  meet do
+    cd "/tmp/" do
+      shell "wget -O chruby-fish-0.6.0.tar.gz https://github.com/JeanMertz/chruby-fish/archive/v0.6.0.tar.gz"
+      shell "tar -xzvf chruby-fish-0.6.0.tar.gz"
+      cd "chruby-fish-0.6.0/" do
+        shell "sudo make install"
+      end
+    end
   end
 end
 

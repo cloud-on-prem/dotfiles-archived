@@ -4,6 +4,7 @@ dep 'main' do
   requires 'dev'
   requires 'tmux-main'
   requires 'zsh-main'
+  requires 'fish-main'
 end
 
 dep 'git.bin' do
