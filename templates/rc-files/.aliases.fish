@@ -1,123 +1,123 @@
 function c
-  'clear'
+  clear
 end
 
 function refresh
-  'source ~/.zshrc'
+  source ~/.zshrc
 end
 
 function restartnet
-  "sudo nohup sh -c 'invoke-rc.d networking stop; date; echo sleeping; sleep 2; echo waking; date; invoke-rc.d networking start'"
+  sudo nohup sh -c 'invoke-rc.d networking stop; date; echo sleeping; sleep 2; echo waking; date; invoke-rc.d networking start'
 end
 
 function lss
-  'ls -lAh'
+  ls -lAh $argv
 end
 
 function v
-  'vim'
+  vim $argv
 end
 
 function vu
-  'vagrant up'
+  vagrant up
 end
 
 function vh
-  'vagrant halt'
+  vagrant halt
 end
 
 function vs
-  'vagrant ssh'
+  vagrant ssh
 end
 
 function vr
-  'vagrant resume'
+  vagrant resume
 end
 
 function vsusp
-  'vagrant suspend'
+  vagrant suspend
 end
 
 function tma
-  'tmux a -t '
+  tmux a -t $argv
 end
 
 function tmn
-  'tmux new -s '
+  tmux new -s $argv
 end
 
 function tmk
-  'tmux kill-session -t '
+  tmux kill-session -t $argv
 end
 
 function tmls
-  'tmux ls'
+  tmux ls
 end
 
 function gfr
-  'git fetch && git rebase'
+  git fetch; and git rebase
 end
 
 function gco
-  'git branch | cut -c 3- | selecta | xargs git checkout && clear'
+  git branch | cut -c 3- | selecta | xargs git checkout; and clear
 end
 
 function grb
-  'git branch --merged master | grep -v "\* master" | xargs -n 0 git branch -d'
+  git branch --merged master | grep -v "\* master" | xargs -n 0 git branch -d
 end
 
 function gti
-  'git'
+  git $argv
 end
 
 function gset
-  'git push --set-upstream origin `git symbolic-ref --short -q HEAD`'
+  git push --set-upstream origin `git symbolic-ref --short -q HEAD`
 end
 
 function gpush
-  'git push'
+  git push $argv
 end
 
 function groom
-  'git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+  git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
 end
 
 function bx
-  'bundle exec'
+  bundle exec $argv
 end
 
 function zc
-  'zeus console'
+  zeus console
 end
 
 function fs
-  'foreman start'
+  foreman start
 end
 
 function bab
-  'babushka'
+  babushka $argv
 end
 
 function fgc
-  'fz_git_co'
+  fz_git_co
 end
 
 function fcd
-  'fz_cd'
+  fz_cd
 end
 
 function fe
-  'fz_edit'
+  fz_edit
 end
 
 function fh
-  'fz_history'
+  fz_history
 end
 
 function fct
-  'fz_ctags'
+  fz_ctags
 end
 
 function ff
-  'fz_locate'
+  fz_locate
 end
