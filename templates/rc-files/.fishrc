@@ -13,10 +13,14 @@ set fish_plugins theme
 #set fish_custom $HOME/dotfiles/oh-my-fish
 #
 source ~/.aliases.fish
+source ~/.functions.fish
 
 source /usr/local/share/chruby/chruby.fish
 source /usr/local/share/chruby/auto.fish
 chruby 2.2.2
+
+function fish_user_key_bindings
+end
 
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish

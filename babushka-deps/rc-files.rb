@@ -36,6 +36,7 @@ dep 'rc-main' do
   requires 'zshrc.rcfile'
   requires 'zsh_aliases.rcfile'
   requires 'fish-aliases.rcfile'
+  requires 'fish-functions.rcfile'
   requires 'zlogin.rcfile'
   requires 'zlogout.rcfile'
   requires 'zshenv.rcfile'
@@ -117,6 +118,10 @@ end
 
 dep 'fish-aliases.rcfile' do
   file_name '.aliases.fish'
+end
+
+dep 'fish-functions.rcfile' do
+  file_name '.functions.fish'
 end
 
 dep 'rspec.rcfile' do
