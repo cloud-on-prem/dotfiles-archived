@@ -68,6 +68,7 @@ au BufRead,BufNewFile *.json set conceallevel=0
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.bundle set filetype=vim
 au BufRead,BufNewFile *.fish set filetype=fish
+au BufRead,BufNewFile *.tmux.conf set filetype=tmux
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
