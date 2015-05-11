@@ -1,123 +1,40 @@
-function c
-  'clear'
-end
+alias c='clear'
+alias refresh='source ~/.zshrc'
+alias restartnet="sudo nohup sh -c 'invoke-rc.d networking stop; date; echo sleeping; sleep 2; echo waking; date; invoke-rc.d networking start'"
 
-function refresh
-  'source ~/.zshrc'
-end
+alias lss='ls -lAh'
 
-function restartnet
-  "sudo nohup sh -c 'invoke-rc.d networking stop; date; echo sleeping; sleep 2; echo waking; date; invoke-rc.d networking start'"
-end
+alias v='vim'
 
-function lss
-  'ls -lAh'
-end
+alias vu='vagrant up'
+alias vh='vagrant halt'
+alias vs='vagrant ssh'
+alias vr='vagrant resume'
+alias vsusp='vagrant suspend'
 
-function v
-  'vim'
-end
+alias tma='tmux a -t '
+alias tmn='tmux new -s '
+alias tmk='tmux kill-session -t '
+alias tmls='tmux ls'
 
-function vu
-  'vagrant up'
-end
 
-function vh
-  'vagrant halt'
-end
+alias gfr="git fetch && git rebase"
+alias gco='git branch | cut -c 3- | selecta | xargs git checkout && clear'
+alias grb='git branch --merged master | grep -v "\* master" | xargs -n 0 git branch -d'
+alias gti='git'
+alias gset='git push --set-upstream origin `git symbolic-ref --short -q HEAD`'
+alias gpush='git push'
+alias groom='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
-function vs
-  'vagrant ssh'
-end
+alias bx='bundle exec'
+alias zc='zeus console'
+alias fs='foreman start'
 
-function vr
-  'vagrant resume'
-end
+alias bab='babushka'
 
-function vsusp
-  'vagrant suspend'
-end
-
-function tma
-  'tmux a -t '
-end
-
-function tmn
-  'tmux new -s '
-end
-
-function tmk
-  'tmux kill-session -t '
-end
-
-function tmls
-  'tmux ls'
-end
-
-function gfr
-  'git fetch && git rebase'
-end
-
-function gco
-  'git branch | cut -c 3- | selecta | xargs git checkout && clear'
-end
-
-function grb
-  'git branch --merged master | grep -v "\* master" | xargs -n 0 git branch -d'
-end
-
-function gti
-  'git'
-end
-
-function gset
-  'git push --set-upstream origin `git symbolic-ref --short -q HEAD`'
-end
-
-function gpush
-  'git push'
-end
-
-function groom
-  'git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
-end
-
-function bx
-  'bundle exec'
-end
-
-function zc
-  'zeus console'
-end
-
-function fs
-  'foreman start'
-end
-
-function bab
-  'babushka'
-end
-
-function fgc
-  'fz_git_co'
-end
-
-function fcd
-  'fz_cd'
-end
-
-function fe
-  'fz_edit'
-end
-
-function fh
-  'fz_history'
-end
-
-function fct
-  'fz_ctags'
-end
-
-function ff
-  'fz_locate'
-end
+alias fgc="fz_git_co"
+alias fcd="fz_cd"
+alias fe="fz_edit"
+alias fh="fz_history"
+alias fct="fz_ctags"
+alias ff="fz_locate"

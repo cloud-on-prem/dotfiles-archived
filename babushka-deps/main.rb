@@ -5,8 +5,11 @@ dep 'main' do
   requires 'tmux-main'
   requires 'zsh-main'
   requires 'fish-main'
+  requires 'wget.managed'
 end
 
 dep 'git.bin' do
   installs "git ~>1.9"
 end
+
+dep 'wget.managed' do provides []; end
