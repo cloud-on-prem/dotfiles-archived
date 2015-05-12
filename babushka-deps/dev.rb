@@ -13,6 +13,7 @@ dep 'dev' do
   requires 'jq.bin'
   requires 'ruby-main'
   # requires 'system-monitoring'
+  requires 'awscli.pip'
 end
 
 dep 'locale' do
@@ -226,3 +227,7 @@ dep 'mlocate.managed' do
 end
 
 dep 'jq.bin'
+
+dep 'awscli.pip' do
+  met? { shell? "aws help --version" }
+end
