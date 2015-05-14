@@ -14,7 +14,10 @@ dep 'dev' do
   requires 'ruby-main'
   # requires 'system-monitoring'
   requires 'awscli.pip'
+  requires 'cmake.managed'
 end
+
+dep 'cmake.managed' do provides []; end
 
 dep 'locale' do
   met? do
@@ -54,6 +57,18 @@ dep 'nvim-brew' do
   meet do
     shell "brew tap neovim/homebrew-neovim"
     shell "brew install --HEAD neovim"
+  end
+end
+
+dep 'ycm' do
+  met? do
+    true
+  end
+
+  meet do
+    cd "~/.vim/bundle/YouCompleteMe" do
+      shell "./install.sh --clang-completer"
+    end
   end
 end
 
