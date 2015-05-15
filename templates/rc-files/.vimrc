@@ -149,6 +149,9 @@ function! SetUpRubySpecs()
   endif
 endfunction
 
+" Move to alternate files quickly
+nnoremap <leader>. :OpenHorizontal(alternate#FindAlternate())<cr>
+
 "Git Blame
 nnoremap <leader>gb :gblame<CR>
 
