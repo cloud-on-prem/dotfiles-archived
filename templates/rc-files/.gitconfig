@@ -4,6 +4,7 @@
 [color]
 	ui = true
 [alias]
+    ctags = !~/.git/hooks/ctags
     st = status -s
     sb = status -s -b
     #############
@@ -27,11 +28,13 @@
 [core]
 	filemode = false
   editor = vim
+[init]
+  templatedir = ~/.git
 [rerere]
 	enabled = true
 [merge]
     tool = vimdiff
-      defaultToUpstream = true
+    defaultToUpstream = true
 [push]
     default = tracking
 [branch]

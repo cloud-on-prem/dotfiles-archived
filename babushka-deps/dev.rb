@@ -6,7 +6,7 @@ dep 'dev' do
   requires 'ag'
   requires 'bower'
   requires 'redis'
-  requires 'exuberant-ctags.pkg'
+  requires 'ctags'
   requires 'fzf'
   requires 'mlocate.managed' if Babushka::Helpers::Os.linux?
   requires 'docker-main'
@@ -30,6 +30,27 @@ dep 'locale' do
 end
 
 dep 'exuberant-ctags.pkg'
+
+dep 'ctags' do
+  requires 'exuberant-ctags.pkg'
+
+  met? do
+    "~/.git/hooks/ctags".p.exists?
+  end
+
+  meet do
+    shell "mkdir -p ~/.git/hooks"
+
+    cd "~/.git/hooks" do
+      shell "ln -sf ~/.dotfiles/scripts/git-hooks/ctags.sh ~/.git/hooks/ctags"
+      shell "ln -sf ~/.dotfiles/scripts/git-hooks/post-rewrite.sh ~/.git/hooks/post-rewrite"
+      shell "ln -sf ~/.dotfiles/scripts/git-hooks/post-commit.sh ~/.git/hooks/post-commit"
+      shell "ln -sf ~/.dotfiles/scripts/git-hooks/post-commit.sh ~/.git/hooks/post-checkout"
+      shell "ln -sf ~/.dotfiles/scripts/git-hooks/post-commit.sh ~/.git/hooks/post-merge"
+      shell "sudo chmod +x *"
+    end
+  end
+end
 
 dep 'nvim' do
   if Babushka::Helpers::Os.osx?

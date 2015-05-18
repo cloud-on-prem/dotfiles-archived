@@ -41,6 +41,7 @@ dep 'rc-main' do
   requires 'zlogout.rcfile'
   requires 'zshenv.rcfile'
   requires 'rspec.rcfile'
+  requires 'ctags.rcfile'
 end
 
 
@@ -126,4 +127,8 @@ end
 
 dep 'rspec.rcfile' do
   file_name '.rspec'
+end
+
+dep 'ctags.rcfile' do
+  file_name '.ctags'
 end

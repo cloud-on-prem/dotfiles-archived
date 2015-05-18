@@ -9,7 +9,7 @@ set nowrap                 " don't wrap text
 set nu
 set ttimeoutlen=10         "wait for 10ms after escape
 set hidden                 "Hide the buffers
-set tags=./tags            "Where to find ctags
+set tags=./.git/tags,tags;$HOME "Where to find ctags
 set backspace=indent,eol,start
 set autoread
 set noswapfile " No swp files
