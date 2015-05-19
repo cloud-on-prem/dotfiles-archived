@@ -190,6 +190,8 @@ command! CleanSpaces :%s/\s\+$//
 set rtp+=~/.fzf
 
 let g:ctrlp_show_hidden = 1
+nnoremap <c-]> :CtrlPtjump<cr>
+vnoremap <c-]> :CtrlPtjumpVisual<cr>
 
 " Ultisnips
 let g:UltiSnipsEditSplit = 'vertical'
