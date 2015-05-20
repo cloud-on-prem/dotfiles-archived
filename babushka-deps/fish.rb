@@ -5,8 +5,13 @@ dep 'fish-main' do
 
   username = shell('whoami')
 
-  met? { shell("sudo su - '#{username}' -c 'echo $SHELL'") == which('fish') }
-  meet { sudo("chsh -s '#{which('fish')}' #{username}") }
+  met? do
+   `sudo su - '#{username}' -c 'echo $SHELL'`.match(/fish/)
+  end
+
+  meet do
+    shell "sudo chsh -s '#{which('fish')}' #{username}"
+  end
 end
 
 dep 'fish.managed' do provides []; end
@@ -23,6 +28,7 @@ end
 
 dep 'fish-config.rcfile' do
   def sym_file
+    shell "mkdir -p ~/.config/fish/"
     "~/.config/fish/config.fish"
   end
 
