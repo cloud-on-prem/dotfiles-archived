@@ -19,7 +19,7 @@ set scrolloff=3
 set encoding=utf-8
 set fileencodings=utf-8
 set t_Co=256               " enable 256-color mode.
-set term=screen-256color
+" set term=screen-256color
 let mapleader = ";" "set the leader key to ';' (easy to type)
 
 if &shell =~# 'fish$'
@@ -31,7 +31,7 @@ set mouse=a
 
 " " Resize split panes with mouse within tmux.
 " " Also get live-updated text selection with mouse drag.
-set ttymouse=xterm2
+" set ttymouse=xterm2
 
 " Deal with Tabs
 set tabstop=2
