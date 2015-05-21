@@ -71,7 +71,7 @@ function gti
 end
 
 function gset
-  git push --set-upstream origin `git symbolic-ref --short -q HEAD`
+  git push --set-upstream origin (git symbolic-ref --short -q HEAD)
 end
 
 function gpush
@@ -120,4 +120,8 @@ end
 
 function ff
   fz_locate
+end
+
+function clean-docker
+  docker stop (docker ps -a -q); and docker rm (docker ps -a -q)
 end
