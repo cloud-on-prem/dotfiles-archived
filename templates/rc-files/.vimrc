@@ -39,6 +39,7 @@ set shiftwidth=2
 set shiftround
 set expandtab
 
+
 " Some Linux distributions set filetype in /etc/vimrc.
 " Clear filetype flags before changing runtimepath to force Vim to reload them.
 syntax enable
@@ -55,6 +56,8 @@ set exrc            " enable per-directory .vimrc files
 set secure          " disable unsafe commands in local .vimrc files
 
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.fzf
+
 call vundle#rc()
 runtime macros/matchit.vim
 
@@ -94,27 +97,8 @@ if has('gui_running')
 endif
 
 " Open Nerdtree
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.swp$','.DS_Store', '.git[[dir]]', '.sass-cache[[dir]]']
-
-" Fix multiple cursors key mapping
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_next_key='<C-f>'
-let g:multi_cursor_prev_key='<C-d>'
-let g:multi_cursor_skip_key='<C-g>'
-let g:multi_cursor_quit_key='<Esc>'
-
-" Tabs
-nnoremap <C-t> :tabnew<CR>
-nnoremap <Leader>h :tabnext<CR>
-nnoremap <Leader>l :tabprev<CR>
-nnoremap <Leader>T <C-W>T<CR> " Move split into a new Tab
-nnoremap <Leader>X :tabclose<CR> " Close current Tab
-
-" Tag bar
-let g:tagbar_left=1
-map <Leader>tg :TagbarOpenAutoClose<CR>
-
 let NERDTreeShowHidden=1
 
 " Disable Arrow keys
@@ -123,6 +107,14 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+
+" Tabs
+nnoremap <C-t> :tabnew<CR>
+nnoremap <Leader>h :tabnext<CR>
+nnoremap <Leader>l :tabprev<CR>
+nnoremap <Leader>T <C-W>T<CR> " Move split into a new Tab
+nnoremap <Leader>X :tabclose<CR> " Close current Tab
+
 " Coffeescript Support
 hi link coffeeReservedError NONE
 hi link coffeeSemicolonError NONE
@@ -130,8 +122,7 @@ hi link coffeeSpaceError NONE
 
 map <Leader>V :e $MYVIMRC<CR> " Open Vimrc on a whim
 nnoremap K i<CR><Esc> " Break lines with ease
-map <Leader>p :set paste!<CR> " Paste stuff like a bos
-nnoremap "p :reg<CR> " Show me the clipboard registry already!
+nnoremap <Leader>p :set paste!<CR> " Paste stuff like a boss
 map <Leader>\ :vsp<CR> " Open a split window on the right
 map <Leader>- :sp<CR> " Open a split window bottom
 map <Leader>q :q<CR> " Quit a Window
@@ -157,7 +148,7 @@ nnoremap <leader>. :OpenHorizontal(alternate#FindAlternate())<cr>
 nnoremap <leader>gb :gblame<CR>
 
 "Update Ctags
-nnoremap <Leader>ct :!sudo bash ~/.dotfiles/scripts/ctags-auto.sh<CR>
+nnoremap <Leader>ct :!sudo git ctags<CR>
 
 " Search for selected text, forwards or backwards
 vnoremap <silent> * :<C-U>
@@ -167,7 +158,7 @@ vnoremap <silent> * :<C-U>
       \ gV:call setreg('"', old_reg, old_regtype)<CR>
 " -------------------------------------------------
 
-" Quick Ack Word
+" Quick Ag Word
 nnoremap <Leader>a :Ag <C-r><C-w>
 
 command! Spell set spell!
@@ -188,7 +179,6 @@ nnoremap <Leader>nu :set nu!<cr>
 "Get rid of annoying white spaces
 command! CleanSpaces :%s/\s\+$//
 
-set rtp+=~/.fzf
 
 let g:ctrlp_show_hidden = 1
 nnoremap <c-]> :CtrlPtjump<cr>
@@ -197,12 +187,50 @@ vnoremap <c-]> :CtrlPtjumpVisual<cr>
 " Ultisnips
 let g:UltiSnipsEditSplit = 'vertical'
 command! Snip :UltiSnipsEdit
-let g:Unicode_ShowPreviewWindow = 1
 
 nnoremap <Leader>w :set nowrap!<cr>
 
 " ------- Folding
 set foldmethod=syntax
-set foldlevelstart=10
+set foldlevelstart=100
 nnoremap <Space> za
 vnoremap <Space> za
+
+"Neocomplete
+"
+"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+      \ 'default' : '',
+      \ 'vimshell' : $HOME.'/.vimshell_hist'
+      \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+  let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" TAB
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" End Neocomplete
