@@ -187,6 +187,9 @@ vnoremap <c-]> :CtrlPtjumpVisual<cr>
 " Ultisnips
 let g:UltiSnipsEditSplit = 'vertical'
 command! Snip :UltiSnipsEdit
+let g:UltiSnipsExpandTrigger="<C-CR>"
+let g:UltiSnipsJumpForwardTrigger="<C-tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 nnoremap <Leader>w :set nowrap!<cr>
 
