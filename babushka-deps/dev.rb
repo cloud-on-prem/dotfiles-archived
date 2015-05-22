@@ -1,6 +1,5 @@
 dep 'dev' do
   requires 'locale'
-  requires 'nvim'
   requires 'tree.bin'
   requires 'mercurial.bin'
   requires 'ag'
@@ -48,47 +47,6 @@ dep 'ctags' do
       shell "ln -sf ~/.dotfiles/scripts/git-hooks/post-commit.sh ~/.git/hooks/post-checkout"
       shell "ln -sf ~/.dotfiles/scripts/git-hooks/post-commit.sh ~/.git/hooks/post-merge"
       shell "sudo chmod +x *"
-    end
-  end
-end
-
-dep 'nvim' do
-  if Babushka::Helpers::Os.osx?
-    requires 'nvim-brew'
-  end
-
-  met? do
-    shell? "nvim --version"
-  end
-
-  meet do
-    unless Babushka::Helpers::Os.osx?
-      shell "sudo add-apt-repository ppa:neovim-ppa/unstable"
-      shell "sudo apt-get update"
-      shell "sudo apt-get install neovim"
-    end
-  end
-end
-
-dep 'nvim-brew' do
-  met? do
-    shell? "nvim --version"
-  end
-
-  meet do
-    shell "brew tap neovim/homebrew-neovim"
-    shell "brew install --HEAD neovim"
-  end
-end
-
-dep 'ycm' do
-  met? do
-    true
-  end
-
-  meet do
-    cd "~/.vim/bundle/YouCompleteMe" do
-      shell "./install.sh --clang-completer"
     end
   end
 end
