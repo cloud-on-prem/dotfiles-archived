@@ -9,7 +9,7 @@ set nowrap                 " don't wrap text
 set nu
 set ttimeoutlen=10         "wait for 10ms after escape
 set hidden                 "Hide the buffers
-set tags=./.git/tags,tags;$HOME "Where to find ctags
+set tags=.git/tags,tags;$HOME "Where to find ctags
 set backspace=indent,eol,start
 set autoread
 set noswapfile " No swp files
@@ -76,7 +76,6 @@ au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.bundle set filetype=vim
 au BufRead,BufNewFile *.fish set filetype=fish
 au BufRead,BufNewFile *.tmux.conf set filetype=tmux
-let g:ycm_register_as_syntastic_checker = 0
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
@@ -99,11 +98,6 @@ let g:airline_powerline_fonts = 1
 if has('gui_running')
   set guifont=Sauce\ Code\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 endif
-
-" Open Nerdtree
-nnoremap <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore = ['\.swp$','.DS_Store', '.git[[dir]]', '.sass-cache[[dir]]']
-let NERDTreeShowHidden=1
 
 " Disable Arrow keys
 noremap <Up> <NOP>
@@ -130,7 +124,6 @@ nnoremap <Leader>p :set paste!<CR> " Paste stuff like a boss
 map <Leader>\ :vsp<CR> " Open a split window on the right
 map <Leader>- :sp<CR> " Open a split window bottom
 map <Leader>q :q<CR> " Quit a Window
-map <Leader>f :NERDTreeFind<CR> " Show the current file in Nerdtree
 nnoremap <Leader>i ggVG=``
 
 "Run specs like a boss
@@ -182,11 +175,6 @@ nnoremap <Leader>nu :set nu!<cr>
 
 "Get rid of annoying white spaces
 command! CleanSpaces :%s/\s\+$//
-
-
-let g:ctrlp_show_hidden = 1
-nnoremap <c-]> :CtrlPtjump<cr>
-vnoremap <c-]> :CtrlPtjumpVisual<cr>
 
 " Ultisnips
 let g:UltiSnipsEditSplit = 'vertical'
@@ -244,7 +232,8 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 " ----------- Unite
-nnoremap <C-p> :Unite file file_rec/async file_mru -start-insert -auto-preview<cr>
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <C-p> :Unite bookmark file_mru file file_rec/async:! -start-insert -no-split<cr>
 let g:unite_source_history_yank_enable = 1
 nnoremap <Leader>' :Unite history/yank<cr>
 nnoremap <Leader>b :Unite -quick-match buffer<cr>
@@ -255,5 +244,6 @@ let g:unite_source_grep_default_opts =
       \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
 let g:unite_source_grep_recursive_opt = ''
 nnoremap <Leader>/ :Unite grep:.<cr>
-nnoremap <Leader>t :Unite tag/include<cr>
+nnoremap <Leader>t :Unite tag -start-insert -auto-preview<cr>
+nnoremap <Leader>l :Unite line -start-insert<cr>
 " End Unite
