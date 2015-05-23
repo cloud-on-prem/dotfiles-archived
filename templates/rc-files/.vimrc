@@ -55,13 +55,17 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 set exrc            " enable per-directory .vimrc files
 set secure          " disable unsafe commands in local .vimrc files
 
-set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/.fzf
-
-call vundle#rc()
-runtime macros/matchit.vim
-
+" Neobundle
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
 source ~/.vim.bundle
+call neobundle#end()
+filetype plugin indent on
+NeoBundleCheck
+
+set rtp+=~/.fzf
+runtime macros/matchit.vim
 
 " Set up syntaxes
 let g:syntastic_check_on_open=1
@@ -237,3 +241,19 @@ endfunction
 " TAB
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " End Neocomplete
+
+
+" ----------- Unite
+nnoremap <C-p> :Unite file file_rec/async file_mru -start-insert -auto-preview<cr>
+let g:unite_source_history_yank_enable = 1
+nnoremap <Leader>' :Unite history/yank<cr>
+nnoremap <Leader>b :Unite -quick-match buffer<cr>
+" Search
+let g:unite_source_grep_command = 'ag'
+let g:unite_source_grep_default_opts =
+      \ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
+      \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+let g:unite_source_grep_recursive_opt = ''
+nnoremap <Leader>/ :Unite grep:.<cr>
+nnoremap <Leader>t :Unite tag/include<cr>
+" End Unite
