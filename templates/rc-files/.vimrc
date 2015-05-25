@@ -228,6 +228,20 @@ function! s:my_cr_function()
 endfunction
 " TAB
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+set cmdheight=2
+set completeopt+=menuone
+set completeopt-=preview
+let g:neocomplete#enable_at_startup = 1
+let g:echodoc_enable_at_startup = 1
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_pattern')
+  let g:neocomplete#sources#omni#input_pattern = {}
+endif
+
+" golang fix
+let g:neocomplete#sources#omni#input_pattern.go = '[^.[:digit:] *\t]\.\w*'
 " End Neocomplete
 
 

@@ -41,3 +41,4 @@ NeoBundle 'Shougo/vimproc.vim', {
 \ }
 
 NeoBundle 'tsukkee/unite-tag'
+NeoBundle 'Shougo/echodoc.vim'
