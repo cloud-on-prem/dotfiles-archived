@@ -155,9 +155,6 @@ vnoremap <silent> * :<C-U>
       \ gV:call setreg('"', old_reg, old_regtype)<CR>
 " -------------------------------------------------
 
-" Quick Ag Word
-nnoremap <Leader>a :Ag <C-r><C-w>
-
 command! Spell set spell!
 command! Refresh so $MYVIMRC
 
@@ -260,4 +257,7 @@ let g:unite_source_grep_recursive_opt = ''
 nnoremap <Leader>/ :Unite grep:.<cr>
 nnoremap <Leader>t :Unite tag -start-insert -auto-preview<cr>
 nnoremap <Leader>l :Unite line -start-insert<cr>
+" Quick Ag Word
+nnoremap <Leader>a :UniteWithCursorWord grep:.<cr>
+
 " End Unite
