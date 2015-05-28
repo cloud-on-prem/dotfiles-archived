@@ -244,6 +244,7 @@ let g:neocomplete#sources#omni#input_pattern.go = '[^.[:digit:] *\t]\.\w*'
 
 " ----------- Unite
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
 nnoremap <C-p> :Unite bookmark file_mru file file_rec/async:! -start-insert -no-split<cr>
 let g:unite_source_history_yank_enable = 1
 nnoremap <Leader>' :Unite history/yank<cr>
