@@ -241,7 +241,6 @@ endif
 let g:neocomplete#sources#omni#input_pattern.go = '[^.[:digit:] *\t]\.\w*'
 " End Neocomplete
 
-
 " ----------- Unite
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
@@ -262,3 +261,25 @@ nnoremap <Leader>l :Unite line -start-insert<cr>
 nnoremap <Leader>a :UniteWithCursorWord grep:.<cr>
 nnoremap <Leader>o :Unite process -start-insert<cr>
 " End Unite
+"
+"Vimfiler
+nnoremap <C-n> :VimFiler<cr>
+let g:vimfiler_as_default_explorer = 1
+" Enable file operation commands.
+" Edit file by tabedit.
+call vimfiler#custom#profile('default', 'context', {
+     \ 'safe' : 0
+     \ })
+" Like Textmate icons.
+let g:vimfiler_tree_leaf_icon = ''
+let g:vimfiler_tree_opened_icon = '▷'
+let g:vimfiler_tree_closed_icon = ''
+let g:vimfiler_file_icon = ''
+let g:vimfiler_marked_file_icon = ''
+
+nmap <buffer> c
+      \ <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_copy_file)
+nmap <buffer> m
+      \ <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_move_file)
+nmap <buffer> d
+      \ <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_delete_file)
