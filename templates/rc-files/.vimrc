@@ -260,5 +260,5 @@ nnoremap <Leader>t :Unite tag -start-insert -auto-preview<cr>
 nnoremap <Leader>l :Unite line -start-insert<cr>
 " Quick Ag Word
 nnoremap <Leader>a :UniteWithCursorWord grep:.<cr>
-
+nnoremap <Leader>o :Unite process -start-insert<cr>
 " End Unite
