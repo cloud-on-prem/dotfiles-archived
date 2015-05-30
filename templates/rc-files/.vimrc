@@ -132,9 +132,9 @@ au FileType ruby call SetUpRubySpecs()
 
 function! SetUpRubySpecs()
   if g:specType == "rspec"
-    nnoremap <leader>r :w\|:call VimuxRunCommand("clear && bx rspec --format documentation ". bufname("%") . ":" . line("."))<CR>
+    nnoremap <leader>r :w\|:call VimuxRunCommand("clear & bx rspec --format documentation ". bufname("%") . ":" . line("."))<CR>
   elseif g:specType == "minitest"
-    nnoremap <leader>r :w\|:call VimuxRunCommand("clear && ruby -Ilib:test ". bufname("%"))<CR>
+    nnoremap <leader>r :w\|:call VimuxRunCommand("clear & ruby -Ilib:test ". bufname("%"))<CR>
   endif
 endfunction
 
@@ -244,7 +244,7 @@ let g:neocomplete#sources#omni#input_pattern.go = '[^.[:digit:] *\t]\.\w*'
 " ----------- Unite
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
-nnoremap <C-p> :Unite bookmark file_mru file file_rec/async:! -start-insert -no-split<cr>
+nnoremap <C-p> :Unite bookmark file_mru file file_rec/git -start-insert -no-split<cr>
 let g:unite_source_history_yank_enable = 1
 nnoremap <Leader>' :Unite history/yank<cr>
 nnoremap <Leader>b :Unite -quick-match buffer<cr>
@@ -276,6 +276,7 @@ let g:vimfiler_tree_opened_icon = '▷'
 let g:vimfiler_tree_closed_icon = ''
 let g:vimfiler_file_icon = ''
 let g:vimfiler_marked_file_icon = ''
+let g:vimfiler_tree_indentation = 4
 
 nmap <buffer> c
       \ <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_copy_file)
