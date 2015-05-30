@@ -42,8 +42,42 @@ dep 'rc-main' do
   requires 'zshenv.rcfile'
   requires 'rspec.rcfile'
   requires 'ctags.rcfile'
+  requires 'ghci.rcfile'
+  requires 'rc-files-perms'
+  requires 'ghci-file-perms'
 end
 
+dep 'rc-files-perms' do
+  def dir
+    "~/.dotfiles/templates/rc-files"
+  end
+
+  met? do
+    /drwxr-xr-x/.match(shell "ls -ld #{dir}")
+  end
+
+  meet do
+    shell "chmod g-w #{dir}"
+  end
+end
+
+dep 'ghci-file-perms' do
+  def file
+    "~/.ghci"
+  end
+
+  met? do
+    /lrwxrwxrwx/.match(shell "ls -l #{file}")
+  end
+
+  meet do
+    shell "chmod g-w #{file}"
+  end
+end
+
+dep 'ghci.rcfile' do
+  file_name '.ghci'
+end
 
 dep 'ack.rcfile' do
   file_name '.ackrc'

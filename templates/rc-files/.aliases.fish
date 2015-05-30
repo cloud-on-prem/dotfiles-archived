@@ -125,3 +125,7 @@ end
 function clean-docker
   docker stop (docker ps -a -q); and docker rm (docker ps -a -q)
 end
+
+function hask
+~/.ghci-color/ghci-color
+end

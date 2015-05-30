@@ -264,6 +264,7 @@ nnoremap <Leader>o :Unite process -start-insert<cr>
 "
 "Vimfiler
 nnoremap <C-n> :VimFiler<cr>
+nnoremap <C-f> :VimFilerBufferDir<cr>
 let g:vimfiler_as_default_explorer = 1
 " Enable file operation commands.
 " Edit file by tabedit.
