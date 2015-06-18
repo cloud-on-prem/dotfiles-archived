@@ -1,5 +1,6 @@
 NeoBundle 'premjg/vim-colorschemes'
 NeoBundle 'vim-scripts/tComment'
+NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'compactcode/open.vim'
