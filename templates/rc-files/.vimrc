@@ -108,8 +108,8 @@ noremap <Right> <NOP>
 
 " Tabs
 nnoremap <C-t> :tabnew<CR>
-nnoremap <Leader>h :tabnext<CR>
-nnoremap <Leader>l :tabprev<CR>
+nnoremap <C-l> :tabnext<CR>
+nnoremap <C-h> :tabprev<CR>
 nnoremap <Leader>T <C-W>T<CR> " Move split into a new Tab
 nnoremap <Leader>X :tabclose<CR> " Close current Tab
 
