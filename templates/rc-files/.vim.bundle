@@ -47,3 +47,6 @@ NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 
 NeoBundle 'eagletmt/neco-ghc'
+NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundle 'bitc/vim-hdevtools'
+NeoBundle 'raichoo/haskell-vim'
