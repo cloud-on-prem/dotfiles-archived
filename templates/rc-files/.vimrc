@@ -289,6 +289,6 @@ nmap <buffer> d
 
 " Haskell
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-autocmd FileType haskell nnoremap <buffer> <Leader>1 :HdevtoolsType<CR>
-autocmd FileType haskell nnoremap <buffer> <Leader>2 :HdevtoolsClear<CR>
-autocmd FileType haskell nnoremap <buffer> <Leader>3 :HdevtoolsInfo<CR>
+autocmd FileType haskell nnoremap <buffer> <Leader>t :GhcModType<CR>
+autocmd FileType haskell nnoremap <buffer> <Leader>c :GhcModTypeClear<CR>
+autocmd FileType haskell nnoremap <buffer> <Leader>i :GhcModInfo<CR>

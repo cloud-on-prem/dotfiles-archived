@@ -48,5 +48,5 @@ NeoBundle 'Shougo/vimfiler.vim'
 
 NeoBundle 'eagletmt/neco-ghc'
 NeoBundle 'eagletmt/ghcmod-vim'
-NeoBundle 'bitc/vim-hdevtools'
-NeoBundle 'raichoo/haskell-vim'
+NeoBundle 'Twinside/vim-hoogle'
+NeoBundle 'raichoo/haskell-vim' " Mostly for better syntax highlighting and auto-indentations
