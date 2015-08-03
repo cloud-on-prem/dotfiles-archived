@@ -85,15 +85,15 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 " Look and Feel
 set background=dark
 if filereadable( expand("$HOME/.vim/bundle/vim-colorschemes/colors/gruvbox.vim") )
-  colorscheme gruvbox
+  " colorscheme gruvbox
   " colorscheme molokai
-  " colorscheme solarized
+  colorscheme solarized
   " colorscheme vividchalk
 end
 hi Normal ctermfg=252 ctermbg=none
 
 " Airline conf
-let g:airline_theme='wombat'
+let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1
 
 if has('gui_running')
