@@ -280,11 +280,11 @@ let g:vimfiler_file_icon = ''
 let g:vimfiler_marked_file_icon = ''
 let g:vimfiler_tree_indentation = 4
 
-nmap <buffer> c
+autocmd FileType vimfiler nmap <buffer> c
       \ <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_copy_file)
-nmap <buffer> m
+autocmd FileType vimfiler nmap <buffer> m
       \ <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_move_file)
-nmap <buffer> d
+autocmd FileType vimfiler nmap <buffer> d
       \ <Plug>(vimfiler_mark_current_line)<Plug>(vimfiler_delete_file)
 
 " Haskell
