@@ -292,3 +292,5 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 autocmd FileType haskell nnoremap <buffer> <Leader>t :GhcModType<CR>
 autocmd FileType haskell nnoremap <buffer> <Leader>c :GhcModTypeClear<CR>
 autocmd FileType haskell nnoremap <buffer> <Leader>i :GhcModInfo<CR>
+
+let g:airline#extensions#tmuxline#enabled = 0
