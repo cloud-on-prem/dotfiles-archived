@@ -20,6 +20,8 @@ source /usr/local/share/chruby/auto.fish
 chruby 2.2.2
 
 function fish_user_key_bindings
+bind \e\[I 'begin;end'
+bind \e\[O 'begin;end'
 end
 
 
