@@ -52,3 +52,5 @@ NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'Twinside/vim-hoogle'
 NeoBundle 'neovimhaskell/haskell-vim' " Mostly for better syntax highlighting and auto-indentations
 NeoBundle 'vim-scripts/Haskell-Conceal'
+
+NeoBundle 'derekwyatt/vim-scala'
