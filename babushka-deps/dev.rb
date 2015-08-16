@@ -26,6 +26,7 @@ dep 'dev' do
   requires 'ruby-main'
   # requires 'system-monitoring'
   requires 'awscli.pip'
+  requires 'haskell-main'
 end
 
 dep 'cmake.managed' do provides []; end
