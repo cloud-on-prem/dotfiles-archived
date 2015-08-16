@@ -24,7 +24,7 @@ end
 
 dep 'hdevtools' do
   meet do
-    shell 'cabal upadate && cabal install hdevtools'
+    shell 'cabal update && cabal install hdevtools'
   end
 
   met? do

@@ -54,6 +54,8 @@ export PATH="/usr/local/go/bin:$PATH"
 export GOPATH="$HOME/projects/go"
 export PATH=$PATH:$GOPATH/bin
 
+#Haskell
+export PATH="$PATH:$HOME/.cabal/bin"
 
 if [ -f ~/.zsh_profile ]; then
   . ~/.zsh_profile
