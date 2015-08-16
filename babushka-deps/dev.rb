@@ -1,4 +1,17 @@
 dep 'dev' do
+  requires %w[
+    cmake.managed
+    libffi-dev.managed
+    libglib2.0-dev.managed
+    pkg-config.managed
+    libpcre3-dev.managed
+    zlib1g-dev.managed
+    liblzma-dev
+    autotools-dev.managed
+    automake.managed
+    gcc.managed
+  ]
+
   requires 'locale'
   requires 'tree.bin'
   requires 'mercurial.bin'
@@ -13,10 +26,18 @@ dep 'dev' do
   requires 'ruby-main'
   # requires 'system-monitoring'
   requires 'awscli.pip'
-  requires 'cmake.managed'
 end
 
 dep 'cmake.managed' do provides []; end
+dep 'libffi-dev.managed' do provides [] end
+dep 'libglib2.0-dev.managed' do provides [] end
+dep 'pkg-config.managed' do provides [] end
+dep 'libpcre3-dev.managed' do provides [] end
+dep 'zlib1g-dev.managed'   do provides [] end
+dep 'autotools-dev.managed'   do provides [] end
+dep 'automake.managed'   do provides [] end
+dep 'gcc.managed'   do provides [] end
+
 
 dep 'locale' do
   met? do
@@ -100,16 +121,6 @@ dep 'the_silver_searcher.bin' do
 end
 
 dep 'silversearcher-ag-src' do
-  requires %w[
-    libffi-dev.managed
-    libglib2.0-dev.managed
-    pkg-config.managed
-    libpcre3-dev.managed
-    zlib1g-dev.managed
-    liblzma-dev
-    autotools-dev.managed
-    automake.managed
-  ]
 
   met? do
     shell? "ag --version"
@@ -124,14 +135,6 @@ dep 'silversearcher-ag-src' do
     end
   }
 end
-
-dep 'libffi-dev.managed' do provides [] end
-dep 'libglib2.0-dev.managed' do provides [] end
-dep 'pkg-config.managed' do provides [] end
-dep 'libpcre3-dev.managed' do provides [] end
-dep 'zlib1g-dev.managed'   do provides [] end
-dep 'autotools-dev.managed'   do provides [] end
-dep 'automake.managed'   do provides [] end
 
 dep 'liblzma-dev' do
   met? { shell? "dpkg -s liblzma-dev" }
