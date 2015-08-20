@@ -245,10 +245,11 @@ let g:neocomplete#sources#omni#input_pattern.go = '[^.[:digit:] *\t]\.\w*'
 " ----------- Unite
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
-nnoremap <C-p> :Unite bookmark file_mru file file_rec/git -start-insert -no-split<cr>
+nnoremap <C-p> :Unite file file_rec/git file_mru -start-insert -no-split<cr>
 let g:unite_source_history_yank_enable = 1
 nnoremap <Leader>' :Unite history/yank<cr>
-nnoremap <Leader>b :Unite -quick-match buffer<cr>
+nnoremap <Leader>b :Unite buffer<cr>
+let g:neomru#file_mru_limit = 5
 " Search
 let g:unite_source_grep_command = 'ag'
 let g:unite_source_grep_default_opts =
@@ -258,6 +259,7 @@ let g:unite_source_grep_recursive_opt = ''
 nnoremap <Leader>/ :Unite grep:.<cr>
 nnoremap <Leader>t :Unite tag -start-insert -auto-preview<cr>
 nnoremap <Leader>l :Unite line -start-insert<cr>
+nnoremap <Leader>j :Unite jump<cr>
 " Quick Ag Word
 nnoremap <Leader>a :UniteWithCursorWord grep:.<cr>
 nnoremap <Leader>o :Unite process -start-insert<cr>
