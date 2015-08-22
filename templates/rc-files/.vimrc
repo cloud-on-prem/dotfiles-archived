@@ -302,3 +302,8 @@ autocmd FileType haskell nnoremap <buffer> <Leader>c :GhcModTypeClear<CR>
 autocmd FileType haskell nnoremap <buffer> <Leader>i :GhcModInfo<CR>
 
 let g:airline#extensions#tmuxline#enabled = 0
+
+"Snippets
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
