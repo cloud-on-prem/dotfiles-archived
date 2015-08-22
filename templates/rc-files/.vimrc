@@ -167,6 +167,12 @@ command! W w
 " Go Stuff
 au FileType go nnoremap <leader>b :GoBuild<cr>
 au FileType go nnoremap <leader>r :w\|:call VimuxRunCommand("clear && go run " . fnamemodify(bufname("%"), ":p"))<CR>
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
 
 "Line Numbers
 nnoremap <Leader>nu :set nu!<cr>
