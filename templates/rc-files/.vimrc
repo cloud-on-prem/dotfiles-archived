@@ -166,6 +166,7 @@ command! Wq wq
 command! W w
 
 " Go Stuff
+au FileType go nnoremap <leader>v :GoVet<cr>
 au FileType go nnoremap <leader>b :GoBuild<cr>
 au FileType go nnoremap <leader>r :w\|:call VimuxRunCommand("clear && go run " . fnamemodify(bufname("%"), ":p"))<CR>
 let g:go_highlight_functions = 1
