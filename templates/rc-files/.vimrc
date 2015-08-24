@@ -157,6 +157,7 @@ vnoremap <silent> * :<C-U>
 " -------------------------------------------------
 
 command! Spell set spell!
+command! Fuckit qa!
 command! Refresh so $MYVIMRC
 
 " Common spelling mistakes
