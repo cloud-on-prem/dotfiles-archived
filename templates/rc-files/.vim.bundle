@@ -30,6 +30,7 @@ NeoBundle 'premjg/vim-webdevicons'
 NeoBundle 'wellle/targets.vim'
 NeoBundle 'tmux-plugins/vim-tmux-focus-events'
 NeoBundle 'dag/vim-fish'
+NeoBundle 'rking/ag.vim'
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'

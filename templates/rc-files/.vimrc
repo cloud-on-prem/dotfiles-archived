@@ -244,6 +244,9 @@ if !exists('g:neocomplete#sources#omni#input_pattern')
   let g:neocomplete#sources#omni#input_pattern = {}
 endif
 
+"Ag
+let g:ag_working_path_mode="r"
+
 " golang fix
 let g:neocomplete#sources#omni#input_pattern.go = '[^.[:digit:] *\t]\.\w*'
 " End Neocomplete
@@ -259,7 +262,7 @@ let g:neomru#file_mru_limit = 5
 " Search
 let g:unite_source_grep_command = 'ag'
 let g:unite_source_grep_default_opts =
-      \ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
+      \ '--vimgrep --line-numbers --nocolor --nogroup --hidden --ignore ' .
       \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
 let g:unite_source_grep_recursive_opt = ''
 nnoremap <Leader>/ :Unite grep:.<cr>
